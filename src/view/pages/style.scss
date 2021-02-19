@@ -1,0 +1,21 @@
+
+.sign_in_form__top_page {
+    display: flex;
+    flex-direction: column;    margin: 0 auto;
+    text-align: center;
+    width: 25vw;
+    min-width: 25vw;
+    @media screen and (max-aspect-ratio: 1/1) {
+        /* 480px以下に適用されるCSS（スマホ用） */
+        width: 80%;
+        min-width: 500px;
+    }
+}
+
+
+.top_page_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

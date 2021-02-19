@@ -1,0 +1,10 @@
+@import "./mixinsample.scss";
+
+.sample{
+    color: red;
+    @include common_style();
+}
+
+.style {
+    @include common_style()
+}

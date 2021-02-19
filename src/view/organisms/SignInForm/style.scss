@@ -1,0 +1,44 @@
+@import "../../molecules/defaultStyle.scss";
+
+@mixin single_sign_on_form__appearance {
+    border-radius: 0.5em;
+    border-width: 0.1em;
+    border-style: solid;
+    background-color: lightgray;
+}
+
+.google_sign_in_btn {
+    @include google_sign_in_btn__appearance();
+    margin-top: -0.8vh;
+}
+
+.password_sign_in_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.username_textbox {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    font-size: 1.2em;
+}
+
+.password_textbox {
+    margin-bottom: 2vh;
+    font-size: 1.2em;
+}
+
+.sign_in_btn {
+    margin-bottom: 3vh;
+    font-size: 2em;
+}
+
+.sso_form {
+    @include single_sign_on_form__appearance();
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

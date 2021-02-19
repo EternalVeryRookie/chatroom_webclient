@@ -1,0 +1,5 @@
+@import "./defaultStyle.scss";
+
+.google_sign_in_btn__default{
+    @include google_sign_in_btn__appearance();
+}
