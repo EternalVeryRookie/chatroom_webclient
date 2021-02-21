@@ -8,7 +8,7 @@ import {setContext } from "apollo-link-context";
 
 import ENV from "ENV";
 import { ApolloProvider, InMemoryCache, ApolloClient, createHttpLink } from "@apollo/client";
-import UserProfile from "./view/pages/UserProfile.js";
+import UserProfile from "./view/pages/UserProfile/UserProfile.js";
 import Top from "./view/pages/Top.js";
 import Chatroom from "./view/pages/Chatroom.js";
 
