@@ -24,15 +24,17 @@ function ChatroomEntrance(ispublic) {
         }
 
         return (
-            <div onClick={onClick} className={style.chatroom_entrance}>
-                <Label className={style.room_info}>{props.roomName}</Label>
-                <Label className={style.room_info}>作成者: {props.roomCreator}</Label>
-                <Label className={style.room_info}>{props.roomDescription}</Label>
+            <div className={props.className}>
+                <div onClick={onClick} className={style.entrance__appearance}>
+                    <Label className={style.room_info}>{props.roomName}</Label>
+                    <Label className={style.room_info}>作成者: {props.roomCreator}</Label>
+                    <Label className={style.room_info}>{props.roomDescription}</Label>
+                </div>
             </div>
         );
     }
 }
 
 
-export const PublicChatroomEntrance = ChatroomEntrance(true)
-export const PrivateChatroomEntrance = ChatroomEntrance(false)
+export const PublicChatroomEntrance = ChatroomEntrance(true);
+export const PrivateChatroomEntrance = ChatroomEntrance(false);

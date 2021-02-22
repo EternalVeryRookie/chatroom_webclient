@@ -1,3 +1,4 @@
+@import "../organisms/ChatroomEntrance/style.scss";
 
 .sign_in_form__top_page {
     display: flex;
@@ -12,10 +13,32 @@
     }
 }
 
-
 .top_page_style {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.chatroom_list {
+    display: flex;
+    align-items: flex-start;
+    width: 80vw;
+}
+
+.joined_chatroom_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-width: 50%;
+}
+
+.entrances {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

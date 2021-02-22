@@ -8,7 +8,7 @@ export default function SingleSignOnForm(props) {
     return (
         <div className={props.style}>
             <p>他サービスのアカウントでサインインする</p>
-            <GoogleSignInButton style={style.google_sign_in_btn}></GoogleSignInButton>
+            <GoogleSignInButton className={style.google_sign_in_btn}></GoogleSignInButton>
         </div>
     );
 }

@@ -1,4 +1,3 @@
-@import "../../molecules/defaultStyle.scss";
 
 @mixin single_sign_on_form__appearance {
     border-radius: 0.5em;
@@ -8,7 +7,6 @@
 }
 
 .google_sign_in_btn {
-    @include google_sign_in_btn__appearance();
     margin-top: -0.8vh;
 }
 
