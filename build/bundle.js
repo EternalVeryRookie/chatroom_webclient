@@ -10725,7 +10725,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/index.js");
 /* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @apollo/client */ "./node_modules/@apollo/client/core/index.js");
 /* harmony import */ var _view_pages_UserProfile_UserProfile_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./view/pages/UserProfile/UserProfile.js */ "./src/view/pages/UserProfile/UserProfile.js");
-/* harmony import */ var _view_pages_Top_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./view/pages/Top.js */ "./src/view/pages/Top.js");
+/* harmony import */ var _view_pages_TopPage_Top_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./view/pages/TopPage/Top.js */ "./src/view/pages/TopPage/Top.js");
 /* harmony import */ var _view_pages_Chatroom_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./view/pages/Chatroom.js */ "./src/view/pages/Chatroom.js");
 
 
@@ -10754,7 +10754,7 @@ function App(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.HashRouter, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     exact: true,
     path: "/",
-    component: _view_pages_Top_js__WEBPACK_IMPORTED_MODULE_7__.default
+    component: _view_pages_TopPage_Top_js__WEBPACK_IMPORTED_MODULE_7__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
     exact: true,
     path: "/userprofile",
@@ -11499,10 +11499,10 @@ function Chatroom(props) {
 
 /***/ }),
 
-/***/ "./src/view/pages/Top.js":
-/*!*******************************!*\
-  !*** ./src/view/pages/Top.js ***!
-  \*******************************/
+/***/ "./src/view/pages/TopPage/Top.js":
+/*!***************************************!*\
+  !*** ./src/view/pages/TopPage/Top.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -11516,8 +11516,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_view_organisms_Header_Header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/organisms/Header/Header.js */ "./src/view/organisms/Header/Header.js");
 /* harmony import */ var src_view_organisms_ChatroomEntrance_ChatroomEntrancies_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/organisms/ChatroomEntrance/ChatroomEntrancies.js */ "./src/view/organisms/ChatroomEntrance/ChatroomEntrancies.js");
 /* harmony import */ var src_user_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/user.js */ "./src/user.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./src/view/pages/style.scss");
-/* harmony import */ var _atoms_Label__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../atoms/Label */ "./src/view/atoms/Label.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./src/view/pages/TopPage/style.scss");
+/* harmony import */ var _atoms_Label__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../atoms/Label */ "./src/view/atoms/Label.js");
 
 
 
@@ -11644,7 +11644,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._1Um9zG7TO87aABPzUBVj7u {\n  background-color: red;\n  cursor: pointer;\n  text-align: center;\n  width: 100%;\n  height: 100%;\n}\n._1Um9zG7TO87aABPzUBVj7u * {\n  pointer-events: none;\n}\n\n._3U9MfsUhRGsDGeyxqhbMSq {\n  margin: 1vh;\n  width: 40%;\n  height: 20vh;\n  min-width: 150px;\n  min-height: 100px;\n}\n\n._3Lv6AOuCitEMncJk6VuSx3 {\n  width: 40%;\n  min-width: 150px;\n  height: 0;\n  padding-top: 0;\n  padding-bottom: 0;\n  margin-top: 0;\n  margin-bottom: 0;\n  margin-right: 1vh;\n  margin-left: 1vh;\n}\n\n._13GKZcetE659lz4grAxZXI {\n  display: block;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/ChatroomEntrance/style.scss"],"names":[],"mappings":"AAAA;EACI,qBAAA;EACA,eAAA;EACA,kBAAA;EAIA,WAAA;EACA,YAAA;AAFJ;AAFI;EACI,oBAAA;AAIR;;AAEA;EACI,WAAA;EACA,UAAA;EACA,YAAA;EACA,gBAAA;EACA,iBAAA;AACJ;;AAEA;EACI,UAAA;EACA,gBAAA;EACA,SAAA;EACA,cAAA;EACA,iBAAA;EACA,aAAA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,cAAA;AACJ","sourcesContent":[".entrance__appearance{\n    background-color: red;\n    cursor: pointer;\n    text-align: center;\n    & * {\n        pointer-events: none;\n    }\n    width: 100%;\n    height: 100%;\n}\n\n.entrance_position {\n    margin: 1vh;\n    width: 40%;\n    height: 20vh;\n    min-width: 150px;\n    min-height: 100px;\n}\n\n.__empty_item {\n    width: 40%;\n    min-width: 150px;\n    height: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-right: 1vh;\n    margin-left: 1vh;\n}\n\n.room_info {\n    display: block;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n._1Um9zG7TO87aABPzUBVj7u {\n  background-color: red;\n  cursor: pointer;\n  text-align: center;\n  width: 100%;\n  height: 100%;\n  overflow: scroll;\n  -ms-overflow-style: none;\n  /* IE、Edge用 */\n  scrollbar-width: none;\n  /* Firefox用 */\n}\n._1Um9zG7TO87aABPzUBVj7u * {\n  pointer-events: none;\n}\n\n._1Um9zG7TO87aABPzUBVj7u::-webkit-scrollbar {\n  display: none;\n}\n\n._3U9MfsUhRGsDGeyxqhbMSq {\n  margin: 1vh;\n  width: 40%;\n  height: 20vh;\n  min-width: 150px;\n  min-height: 100px;\n}\n\n._3Lv6AOuCitEMncJk6VuSx3 {\n  width: 40%;\n  min-width: 150px;\n  height: 0;\n  padding-top: 0;\n  padding-bottom: 0;\n  margin-top: 0;\n  margin-bottom: 0;\n  margin-right: 1vh;\n  margin-left: 1vh;\n}\n\n._13GKZcetE659lz4grAxZXI {\n  display: block;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/ChatroomEntrance/style.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAAhB;EACI,qBAAA;EACA,eAAA;EACA,kBAAA;EAIA,WAAA;EACA,YAAA;EACA,gBAAA;EACA,wBAAA;EAA6B,aAAA;EAC7B,qBAAA;EAA0B,aAAA;AAC9B;AARI;EACI,oBAAA;AAUR;;AADA;EACI,aAAA;AAIJ;;AADA;EACI,WAAA;EACA,UAAA;EACA,YAAA;EACA,gBAAA;EACA,iBAAA;AAIJ;;AADA;EACI,UAAA;EACA,gBAAA;EACA,SAAA;EACA,cAAA;EACA,iBAAA;EACA,aAAA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;AAIJ;;AADA;EACI,cAAA;AAIJ","sourcesContent":[".entrance__appearance{\n    background-color: red;\n    cursor: pointer;\n    text-align: center;\n    & * {\n        pointer-events: none;\n    }\n    width: 100%;\n    height: 100%;\n    overflow: scroll;\n    -ms-overflow-style: none;    /* IE、Edge用 */\n    scrollbar-width: none;    /* Firefox用 */\n}\n\n.entrance__appearance::-webkit-scrollbar {\n    display: none;\n}\n\n.entrance_position {\n    margin: 1vh;\n    width: 40%;\n    height: 20vh;\n    min-width: 150px;\n    min-height: 100px;\n}\n\n.__empty_item {\n    width: 40%;\n    min-width: 150px;\n    height: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-right: 1vh;\n    margin-left: 1vh;\n}\n\n.room_info {\n    display: block;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"entrance__appearance": "_1Um9zG7TO87aABPzUBVj7u",
@@ -11692,6 +11692,40 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/TopPage/style.scss":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/TopPage/style.scss ***!
+  \****************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n._24H-ObeM5m0QRoZrqH41tZ {\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n  text-align: center;\n  width: 25vw;\n  min-width: 25vw;\n}\n@media screen and (max-aspect-ratio: 1/1) {\n  ._24H-ObeM5m0QRoZrqH41tZ {\n    /* 480px以下に適用されるCSS（スマホ用） */\n    width: 80%;\n    min-width: 500px;\n  }\n}\n\n._1zeDV1Z6Pi2MIEtsWAio4S {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n._40CpTbBzjHm-djqrS0t3s {\n  display: flex;\n  align-items: flex-start;\n  width: 80vw;\n}\n\n._17iSkio0K_2fIwH2V4Tfrk {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 50%;\n  max-width: 50%;\n}\n\n._1y5FYKwlsQ8TuvU8jYtklr {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/view/pages/TopPage/style.scss"],"names":[],"mappings":"AAAA,gBAAgB;AAAhB;EACI,aAAA;EACA,sBAAA;EAA2B,cAAA;EAC3B,kBAAA;EACA,WAAA;EACA,eAAA;AAGJ;AAFI;EANJ;IAOQ,2BAAA;IACA,UAAA;IACA,gBAAA;EAKN;AACF;;AAFA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AAKJ;;AAFA;EACI,aAAA;EACA,uBAAA;EACA,WAAA;AAKJ;;AAFA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,UAAA;EACA,cAAA;AAKJ;;AAFA;EACI,aAAA;EACA,eAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;AAKJ","sourcesContent":[".sign_in_form__top_page {\n    display: flex;\n    flex-direction: column;    margin: 0 auto;\n    text-align: center;\n    width: 25vw;\n    min-width: 25vw;\n    @media screen and (max-aspect-ratio: 1/1) {\n        /* 480px以下に適用されるCSS（スマホ用） */\n        width: 80%;\n        min-width: 500px;\n    }\n}\n\n.top_page_style {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.chatroom_list {\n    display: flex;\n    align-items: flex-start;\n    width: 80vw;\n}\n\n.joined_chatroom_list {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 50%;\n    max-width: 50%;\n}\n\n.entrances {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"sign_in_form__top_page": "_24H-ObeM5m0QRoZrqH41tZ",
+	"top_page_style": "_1zeDV1Z6Pi2MIEtsWAio4S",
+	"chatroom_list": "_40CpTbBzjHm-djqrS0t3s",
+	"joined_chatroom_list": "_17iSkio0K_2fIwH2V4Tfrk",
+	"entrances": "_1y5FYKwlsQ8TuvU8jYtklr"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/UserProfile/style.scss":
 /*!********************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/UserProfile/style.scss ***!
@@ -11719,44 +11753,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"user_profile_page_middle_area": "_1MfCnYdldmrwCBFH4aLrMn",
 	"user_profile_page_textarea": "_2iuYitvjfRTS_oFQ3QCa8d",
 	"profile_change_btn": "_1RdoiwKKAHWv-VcleYcafv"
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/style.scss":
-/*!********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/style.scss ***!
-  \********************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n._2RlB7ZKxxcji-FTWTqMgfB {\n  background-color: red;\n  cursor: pointer;\n  text-align: center;\n  width: 100%;\n  height: 100%;\n}\n._2RlB7ZKxxcji-FTWTqMgfB * {\n  pointer-events: none;\n}\n\n.uHK8yfLn51Beh4LIdrpzV {\n  margin: 1vh;\n  width: 40%;\n  height: 20vh;\n  min-width: 150px;\n  min-height: 100px;\n}\n\n._3oScE0P7h_pJXv6ue8yb33 {\n  width: 40%;\n  min-width: 150px;\n  height: 0;\n  padding-top: 0;\n  padding-bottom: 0;\n  margin-top: 0;\n  margin-bottom: 0;\n  margin-right: 1vh;\n  margin-left: 1vh;\n}\n\n._2fXh0y3ecDctDswzZ_ewZt {\n  display: block;\n}\n\n._1Sv5PNVF84mVphRXU-ZbKv {\n  display: flex;\n  flex-direction: column;\n  margin: 0 auto;\n  text-align: center;\n  width: 25vw;\n  min-width: 25vw;\n}\n@media screen and (max-aspect-ratio: 1/1) {\n  ._1Sv5PNVF84mVphRXU-ZbKv {\n    /* 480px以下に適用されるCSS（スマホ用） */\n    width: 80%;\n    min-width: 500px;\n  }\n}\n\n._1y6XjpDc5vatklrvZk5X-u {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n._1x9XNEoUXBfdOxucf4N4WR {\n  display: flex;\n  align-items: flex-start;\n  width: 80vw;\n}\n\n._3DJSqONAW17jziy0cXNgcf {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  width: 50%;\n  max-width: 50%;\n}\n\n._13jmfKPLZ-l0-E7PU8gC-L {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/view/pages/style.scss","webpack://./src/view/organisms/ChatroomEntrance/style.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB;EACI,qBAAA;EACA,eAAA;EACA,kBAAA;EAIA,WAAA;EACA,YAAA;ADDJ;ACHI;EACI,oBAAA;ADKR;;ACCA;EACI,WAAA;EACA,UAAA;EACA,YAAA;EACA,gBAAA;EACA,iBAAA;ADEJ;;ACCA;EACI,UAAA;EACA,gBAAA;EACA,SAAA;EACA,cAAA;EACA,iBAAA;EACA,aAAA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;ADEJ;;ACCA;EACI,cAAA;ADEJ;;AAhCA;EACI,aAAA;EACA,sBAAA;EAA2B,cAAA;EAC3B,kBAAA;EACA,WAAA;EACA,eAAA;AAoCJ;AAnCI;EANJ;IAOQ,2BAAA;IACA,UAAA;IACA,gBAAA;EAsCN;AACF;;AAnCA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AAsCJ;;AAnCA;EACI,aAAA;EACA,uBAAA;EACA,WAAA;AAsCJ;;AAnCA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,UAAA;EACA,cAAA;AAsCJ;;AAnCA;EACI,aAAA;EACA,eAAA;EACA,uBAAA;EACA,mBAAA;EACA,WAAA;AAsCJ","sourcesContent":["@import \"../organisms/ChatroomEntrance/style.scss\";\n\n.sign_in_form__top_page {\n    display: flex;\n    flex-direction: column;    margin: 0 auto;\n    text-align: center;\n    width: 25vw;\n    min-width: 25vw;\n    @media screen and (max-aspect-ratio: 1/1) {\n        /* 480px以下に適用されるCSS（スマホ用） */\n        width: 80%;\n        min-width: 500px;\n    }\n}\n\n.top_page_style {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.chatroom_list {\n    display: flex;\n    align-items: flex-start;\n    width: 80vw;\n}\n\n.joined_chatroom_list {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    width: 50%;\n    max-width: 50%;\n}\n\n.entrances {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n}\n",".entrance__appearance{\n    background-color: red;\n    cursor: pointer;\n    text-align: center;\n    & * {\n        pointer-events: none;\n    }\n    width: 100%;\n    height: 100%;\n}\n\n.entrance_position {\n    margin: 1vh;\n    width: 40%;\n    height: 20vh;\n    min-width: 150px;\n    min-height: 100px;\n}\n\n.__empty_item {\n    width: 40%;\n    min-width: 150px;\n    height: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-right: 1vh;\n    margin-left: 1vh;\n}\n\n.room_info {\n    display: block;\n}"],"sourceRoot":""}]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"entrance__appearance": "_2RlB7ZKxxcji-FTWTqMgfB",
-	"entrance_position": "uHK8yfLn51Beh4LIdrpzV",
-	"__empty_item": "_3oScE0P7h_pJXv6ue8yb33",
-	"room_info": "_2fXh0y3ecDctDswzZ_ewZt",
-	"sign_in_form__top_page": "_1Sv5PNVF84mVphRXU-ZbKv",
-	"top_page_style": "_1y6XjpDc5vatklrvZk5X-u",
-	"chatroom_list": "_1x9XNEoUXBfdOxucf4N4WR",
-	"joined_chatroom_list": "_3DJSqONAW17jziy0cXNgcf",
-	"entrances": "_13jmfKPLZ-l0-E7PU8gC-L"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52746,10 +52742,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/view/pages/UserProfile/style.scss":
-/*!***********************************************!*\
-  !*** ./src/view/pages/UserProfile/style.scss ***!
-  \***********************************************/
+/***/ "./src/view/pages/TopPage/style.scss":
+/*!*******************************************!*\
+  !*** ./src/view/pages/TopPage/style.scss ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -52759,7 +52755,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/UserProfile/style.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/TopPage/style.scss");
 
             
 
@@ -52776,10 +52772,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/view/pages/style.scss":
-/*!***********************************!*\
-  !*** ./src/view/pages/style.scss ***!
-  \***********************************/
+/***/ "./src/view/pages/UserProfile/style.scss":
+/*!***********************************************!*\
+  !*** ./src/view/pages/UserProfile/style.scss ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -52787,9 +52783,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/style.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/pages/UserProfile/style.scss");
 
             
 

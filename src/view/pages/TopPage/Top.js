@@ -7,7 +7,7 @@ import {AvailableJoinChatroomEntrancies, JoiningChatroomEntrancies} from "src/vi
 import {userContext} from "src/user.js";
 
 import style from "./style.scss";
-import Label from "../atoms/Label";
+import Label from "../../atoms/Label";
 
 
 export default function Top(props) {
