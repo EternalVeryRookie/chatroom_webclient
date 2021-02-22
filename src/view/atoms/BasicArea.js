@@ -1,6 +1,5 @@
 import React from "react";
 
-
-export default function BasicArea(props) {
-    return <div {...props}></div>
-}
+export default React.forwardRef((props, ref) => {
+    return  <div {...props}></div>
+});
