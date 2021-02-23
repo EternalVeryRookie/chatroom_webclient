@@ -10718,6 +10718,7 @@ function UserProfile(props) {
       error = _useQuery.error,
       data = _useQuery.data;
 
+  var coverImageRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   var userCtx = (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(src_user_js__WEBPACK_IMPORTED_MODULE_3__.userContext);
 
   var onSelectFile = function onSelectFile(evt) {
@@ -10742,6 +10743,20 @@ function UserProfile(props) {
     to: "/"
   });
 
+  if (data) {
+    coverImageRef.current.src = data.currentUserProfile.coverImage;
+    new Croppie(coverImageRef.current, {
+      viewport: {
+        width: 200,
+        height: 200
+      },
+      boundary: {
+        width: 300,
+        height: 300
+      }
+    });
+  }
+
   var longChar = function longChar() {
     var s = "";
 
@@ -10754,10 +10769,10 @@ function UserProfile(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.user_profile_page
-  }, data ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("img", {
-    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.cover_image,
-    src: data.currentUserProfile.coverImage
-  }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("img", {
+    ref: coverImageRef,
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.cover_image
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.user_profile_page_middle_area
   }, data ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("img", {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.icon_image,

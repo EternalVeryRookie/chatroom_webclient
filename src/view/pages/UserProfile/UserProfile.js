@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import {Redirect} from "react-router-dom"
 import {gql, useMutation, useQuery} from "@apollo/client";
 
@@ -32,6 +32,7 @@ const QUERY = gql`
 export default function UserProfile(props) {
     const [mutate] = useMutation(MUTATION);
     const { loading, error, data } = useQuery(QUERY);
+    const coverImageRef = useRef(null);
     
     const userCtx = useContext(userContext);
     const onSelectFile = (evt) => {
@@ -44,15 +45,28 @@ export default function UserProfile(props) {
     if (userCtx.currentUser == null)
         return <Redirect to="/"/>
 
+    if (data) {
+        coverImageRef.current.src = data.currentUserProfile.coverImage;
+        new Croppie(coverImageRef.current, {viewport: {
+            width: 200,
+            height: 200
+            },
+            boundary: {
+            width: 300,
+            height: 300
+            }});
+    }
+
     const longChar = () =>{
         let s = ""
         for (let i = 0; i < 100; i++)
             s += "サンプル"
         return s;
     }
+
     return (
         <div className={style.user_profile_page}>
-                {data? <img className={style.cover_image} src={data.currentUserProfile.coverImage}/>: null}
+                <img ref={coverImageRef} className={style.cover_image}/>
             <div className={style.user_profile_page_middle_area}>
                 {data? <img className={style.icon_image} src={data.currentUserProfile.icon}/>: null}
                 <div className={style.user_profile_page_textarea}>
