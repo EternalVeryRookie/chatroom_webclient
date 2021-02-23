@@ -4,10 +4,12 @@ import { HashRouter as Router, Route } from "react-router-dom";
 
 import {User, userContext, useUser} from "./user.js";
 import {CURRENT_USER} from "./backend/user.js";
-import {setContext } from "apollo-link-context";
+import { createUploadLink } from 'apollo-upload-client';
+import { onError } from "@apollo/client/link/error";
+
+import { ApolloProvider, InMemoryCache, ApolloClient, createHttpLink } from "@apollo/client";
 
 import ENV from "ENV";
-import { ApolloProvider, InMemoryCache, ApolloClient, createHttpLink } from "@apollo/client";
 import UserProfile from "./view/pages/UserProfile/UserProfile.js";
 import Top from "./view/pages/TopPage/Top.js";
 import Chatroom from "./view/pages/Chatroom.js";
@@ -31,23 +33,31 @@ function App(props) {
 }
 
 
-const link = createHttpLink({
+const link = createUploadLink({
     uri: ENV.API_SERVER_URI + "/graphql",
     credentials: "include",
+    headers: {
+        "keep-alive": "true"
+    },
 });
 
-const authLink = setContext((_, { headers }) => {      
-    return {
-      headers: {
-        ...headers,
-        cookie: document.cookie
-      }
-    }
-  })
+const err = onError(({ graphQLErrors, networkError }) => {
+    if (graphQLErrors)
+      graphQLErrors.forEach(({ message, locations, path }) =>
+        console.log(
+          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+        ),
+      );
+  
+      if (networkError && networkError.statusCode == 413) alert("ファイルが大きすぎます");
+  });
   
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: link//authLink.concat(link),
+    link: err.concat(link),//authLink.concat(link),
+    fetchOptions: {
+        mode: 'no-cors',
+    }
 });
 
 //ユーザー訪問時にログイン済みかどうかをサーバーに問い合わせる

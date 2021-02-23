@@ -1,30 +1,64 @@
-import React, { useContext, useState } from "react";
-import {Link, Redirect} from "react-router-dom"
+import React, { useContext } from "react";
+import {Redirect} from "react-router-dom"
+import {gql, useMutation, useQuery} from "@apollo/client";
 
 import {userContext} from "src/user.js";
 import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
 import PopUp from "src/view/organisms/PopUp/PopUp.js";
 import Label from "src/view/atoms/Label";
+import BasicFileSelectButton from "src/view/atoms/BasicFileSelectButton.js";
 
 import style from "./style.scss";
 
-export default function UserProfile(props) {
-    const [showPopUp, setShowPopUp] = useState(false);
-    const userCtx = useContext(userContext);
+const MUTATION = gql`
+  mutation($icon: Upload, $cover_image: Upload, $self_introduction: String) {
+    editProfile(icon: $icon, coverImage: $cover_image, selfIntroduction: $self_introduction) {
+      success
+    }
+  }
+`;
 
+const QUERY = gql`
+    query{
+        currentUserProfile{
+            selfIntroduction
+            icon
+            coverImage
+        }
+    }
+`;
+
+
+export default function UserProfile(props) {
+    const [mutate] = useMutation(MUTATION);
+    const { loading, error, data } = useQuery(QUERY);
+    
+    const userCtx = useContext(userContext);
+    const onSelectFile = (evt) => {
+        const file =  evt.target.files[0];
+        if (evt.target.validity.valid){
+            mutate({ variables: {icon: file, self_introduction: null, cover_image: null} }).then(response => console.log(response)).catch(err => alert(err));
+        }
+    }
 
     if (userCtx.currentUser == null)
         return <Redirect to="/"/>
 
+    const longChar = () =>{
+        let s = ""
+        for (let i = 0; i < 100; i++)
+            s += "サンプル"
+        return s;
+    }
     return (
         <div className={style.user_profile_page}>
-                <Label>カバー画像</Label>
+                {data? <img className={style.cover_image} src={data.currentUserProfile.coverImage}/>: null}
             <div className={style.user_profile_page_middle_area}>
-                <Label>アイコン</Label>
+                {data? <img className={style.icon_image} src={data.currentUserProfile.icon}/>: null}
                 <div className={style.user_profile_page_textarea}>
+                    <PopUp cover={data? <img className={style.cover_image} src={data.currentUserProfile.coverImage}/>: null} btnRender={onClick => <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={onClick}/>}/>
                     <Label>{userCtx.currentUser.name}</Label>
-                    <Label>{"ユーザー自己紹介は未実装"}</Label>
-                    <PopUp btnRender={onClick => <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={onClick}/>}/>
+                    <Label>{longChar()}</Label>
                 </div>
             </div>
         </div>

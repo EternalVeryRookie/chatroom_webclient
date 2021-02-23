@@ -24,6 +24,7 @@ export default function PopUp(props) {
                             </div>
                             <BasicSubmitButton className={style.save_btn} value="保存" onClick={() => setIsHidden(true)}/>
                         </div>
+                        {props.cover}
                         <input type="text" placeholder="ユーザー名変更"/>
                         <input type="text" placeholder="プロフィール変更"/>
                     </div>
