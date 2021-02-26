@@ -17,19 +17,21 @@
     align-items: center;
 }
 
-.chatroom_list {
+.top_page_layout{
     display: flex;
-    align-items: flex-start;
-    width: 80vw;
+    align-items: baseline;
+}
+
+.navigation_bar_layout {
+    flex-basis: 20%;
+    height: 15vh;
+    flex-grow: 1;
+    margin-left: 7vw;
+    margin-top: 7vh;
 }
 
 .joined_chatroom_list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    max-width: 50%;
+    margin-top: 3vh;
 }
 
 .entrances {

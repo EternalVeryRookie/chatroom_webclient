@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import {Redirect} from "react-router-dom"
 import {gql, useMutation, useQuery} from "@apollo/client";
 
@@ -7,6 +7,7 @@ import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
 import PopUp from "src/view/organisms/PopUp/PopUp.js";
 import Label from "src/view/atoms/Label";
 import BasicFileSelectButton from "src/view/atoms/BasicFileSelectButton.js";
+import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/LeftNavigationBarLayout.js"
 
 import style from "./style.scss";
 
@@ -33,6 +34,7 @@ export default function UserProfile(props) {
     const [mutate] = useMutation(MUTATION);
     const { loading, error, data } = useQuery(QUERY);
     const coverImageRef = useRef(null);
+    const iconImageRef = useRef(null);
     
     const userCtx = useContext(userContext);
     const onSelectFile = (evt) => {
@@ -45,17 +47,22 @@ export default function UserProfile(props) {
     if (userCtx.currentUser == null)
         return <Redirect to="/"/>
 
-    if (data) {
-        coverImageRef.current.src = data.currentUserProfile.coverImage;
-        new Croppie(coverImageRef.current, {viewport: {
-            width: 200,
-            height: 200
-            },
-            boundary: {
-            width: 300,
-            height: 300
-            }});
-    }
+    useEffect(() => {
+        if (data) {
+            coverImageRef.current.src = data.currentUserProfile.coverImage;
+            iconImageRef.current.src = data.currentUserProfile.icon;
+            /*new Croppie(coverImageRef.current, {viewport: {
+                width: 200,
+                height: 200
+                },
+                boundary: {
+                width: 300,
+                height: 300
+                }});
+                */
+        }
+    });
+
 
     const longChar = () =>{
         let s = ""
@@ -65,16 +72,22 @@ export default function UserProfile(props) {
     }
 
     return (
-        <div className={style.user_profile_page}>
+        <LeftNavigationBarLayout>
+            <div className={style.user_profile_page}>
                 <img ref={coverImageRef} className={style.cover_image}/>
-            <div className={style.user_profile_page_middle_area}>
-                {data? <img className={style.icon_image} src={data.currentUserProfile.icon}/>: null}
-                <div className={style.user_profile_page_textarea}>
-                    <PopUp cover={data? <img className={style.cover_image} src={data.currentUserProfile.coverImage}/>: null} btnRender={onClick => <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={onClick}/>}/>
-                    <Label>{userCtx.currentUser.name}</Label>
-                    <Label>{longChar()}</Label>
+                <div className={style.profile_detail}>
+                    <div className={style.user_profile_page_middle_area}>
+                        <img ref={iconImageRef} className={style.icon_image}/>         
+                        <PopUp iconImageSrc={data? data.currentUserProfile.icon: null} coverImageSrc={data? data.currentUserProfile.coverImage: null} btnRender={onClick => <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={onClick}/>}/>
+                    </div>
+                    <div className={style.user_profile_page_textarea}>
+                        <Label>{userCtx.currentUser.name}</Label>
+                        <div  className={style.self_introduction_area}>
+                            <Label>{"longChar()"}</Label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </LeftNavigationBarLayout>
     )
 }

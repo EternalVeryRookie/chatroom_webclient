@@ -7,27 +7,27 @@
     align-items: center;
     width: 50%;
     max-width: 80%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
 }
 
 .user_profile_page_middle_area {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    padding: 1%;
-    margin-top: -2%;
+    align-items: flex-end;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: -11%;
 }
 
 .user_profile_page_textarea {
     display: flex;
     flex-direction: column;
-    margin-left: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.self_introduction_area {
+    flex-basis: 20vh;
 }
 
 .profile_change_btn {
@@ -44,9 +44,25 @@
     border-color: black;
     border-width: 5px;
     border-style: solid;
+    z-index: 100;
 }
 
 .cover_image {
     width: 100%;
     height: auto;
+    z-index: 1;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.profile_detail {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 100%;
+}
+
+.yohaku {
+    padding-top: 100%;
 }
