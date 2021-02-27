@@ -1,12 +1,12 @@
 .page_layout {
     display: flex;
-    align-items: stretch;
+    align-items: flex-start;
     margin-top: 7vh;
 }
 
 .navigation_bar_layout {
     flex-basis: 20%;
-    height: 15vh;
+    height: 35vh;
     min-width: 20%;
     max-width: 20%;
     margin-left: 7vw;

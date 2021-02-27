@@ -1,0 +1,19 @@
+
+.changeable_image_area {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.changeable_icon {
+    color: white;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+}
+
+.file_input {
+    display: none;
+}

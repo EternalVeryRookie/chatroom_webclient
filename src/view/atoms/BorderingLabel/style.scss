@@ -1,0 +1,55 @@
+
+.shadow_top_left{
+    text-shadow: -3px -3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_bottom_left{
+    text-shadow: -3px 3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_top_right{
+    text-shadow: 3px -3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_bottom{
+    text-shadow: 0px 3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_top{
+    text-shadow: 0px -3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_right{
+    text-shadow: 3px 0px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+
+.shadow_left{
+    text-shadow: -3px 0px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}
+.shadow_bottom_right{
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 1.0);
+    pointer-events: none;
+    color: white;
+    position: absolute;
+}

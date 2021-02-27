@@ -1,0 +1,20 @@
+
+.cropping_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.button_area * {
+    margin: 1%;
+    width: 20%;
+}

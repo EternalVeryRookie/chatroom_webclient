@@ -83,7 +83,7 @@ export default function UserProfile(props) {
                     <div className={style.user_profile_page_textarea}>
                         <Label>{userCtx.currentUser.name}</Label>
                         <div  className={style.self_introduction_area}>
-                            <Label>{"longChar()"}</Label>
+                            <Label>{longChar()}</Label>
                         </div>
                     </div>
                 </div>

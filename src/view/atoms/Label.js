@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Label(props) {
-    return <label {...props}></label>
-}
+export default React.forwardRef((props, ref) => {
+    return  <label ref={ref} {...props}></label>
+});
