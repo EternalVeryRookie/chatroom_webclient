@@ -5,14 +5,12 @@ import setting from "assets/setting/user.json";
 import ChangeableImage from "src/view/molecules/ChangeableImage/ChangeableImage.js";
 import PopUp from "src/view/molecules/PopUp/PopUp.js";
 import CropImage from "src/view/molecules/CropImage/CropImage.js";
-import BasicArea from "src/view/atoms/BasicArea.js";
-
 
 import style from "./style.scss";
 
 
 export default function ChangeableCoverImage(props) {
-    const {src, ...others} = props;
+    const {src, onSet, ...others} = props;
     const [imgSrc, setImgSrc] = useState(null);
     const [selectImg, setSelectImg] = useState(null);
 
@@ -20,7 +18,9 @@ export default function ChangeableCoverImage(props) {
         const selectFile = e.target.files[0];
         const reader = new FileReader();
 
-        reader.addEventListener("load", () => setSelectImg(reader.result), false);
+        reader.addEventListener("load", () => {
+            setSelectImg(reader.result)
+        }, false);
         reader.readAsDataURL(selectFile);
     }
     
@@ -28,20 +28,19 @@ export default function ChangeableCoverImage(props) {
         <>
             {
                 selectImg?
-                    <PopUp>
-                        <BasicArea className={style.crop_popup}>
-                            <CropImage 
-                                cropAreaWidthRatio={setting["coverImage"]["sizeRatio"]["width"]} 
-                                cropAreaHeightRatio={setting["coverImage"]["sizeRatio"]["height"]} 
-                                imgUrl={selectImg}
-                                onCrop={(blob) => {
-                                    setSelectImg(null);
-                                    setImgSrc(blob);
-                                }} 
-                                cancelCrop={() => setSelectImg(null)}
-                                className={style.crop_img}
-                            />
-                        </BasicArea>
+                    <PopUp className={style.crop_popup}>
+                        <CropImage 
+                            cropAreaWidthRatio={setting["coverImage"]["sizeRatio"]["width"]} 
+                            cropAreaHeightRatio={setting["coverImage"]["sizeRatio"]["height"]} 
+                            imgUrl={selectImg}
+                            onCrop={(blob) => {
+                                setSelectImg(null);
+                                setImgSrc(URL.createObjectURL(blob));
+                                onSet(blob);
+                            }} 
+                            cancelCrop={() => setSelectImg(null)}
+                            className={style.crop_img}
+                        />
                     </PopUp>
                 : null
             }

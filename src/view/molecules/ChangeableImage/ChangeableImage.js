@@ -5,7 +5,6 @@ import BorderingLabel from "src/view/atoms/BorderingLabel/BorderingLabel.js";
 
 import style from "./style.scss";
 import BasicFileSelectButton from "src/view/atoms/BasicFileSelectButton";
-import PopUp from "../PopUp/PopUp";
 
 //選択が終わったらonChange propを呼ぶ
 export default function ChangeableImage(props) {

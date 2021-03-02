@@ -30,15 +30,6 @@ export default React.forwardRef((props, ref) => {
         topLeftBorder,
         bottomLeftBorder,
     ]
-
-    window.addEventListener("resize", (e) => {
-        labelTranslation(txtRef.current);
-
-        borders.forEach(border => {
-            border.current.style.top = txtRef.current.style.top;
-            border.current.style.left = txtRef.current.style.left;
-        });
-    });
     
     useEffect(() => {
 
@@ -50,6 +41,19 @@ export default React.forwardRef((props, ref) => {
             border.current.style.left = txtRef.current.style.left;
             border.current.style["font-size"] = fontSize;
         });
+
+        const adjustmentBorderPosition = evt => {
+            labelTranslation(txtRef.current);
+    
+            borders.forEach(border => {
+                border.current.style.top = txtRef.current.style.top;
+                border.current.style.left = txtRef.current.style.left;
+            });
+        }
+
+        window.addEventListener("resize", adjustmentBorderPosition);
+
+        return () => window.removeEventListener("resize", adjustmentBorderPosition)
     });
 
     return (

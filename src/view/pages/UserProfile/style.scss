@@ -1,12 +1,14 @@
-
+$border_color: black;
 
 .user_profile_page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    max-width: 80%;
+    width: 100%;
+    border: thin solid $border_color;
+    padding: -0.1vw;
+    box-sizing: border-box;
 }
 
 .user_profile_page_middle_area {
@@ -16,7 +18,7 @@
     align-items: flex-end;
     margin-left: 1vw;
     margin-right: 1vw;
-    margin-top: -11%;
+    margin-top: -10%;
 }
 
 .user_profile_page_textarea {
@@ -27,7 +29,12 @@
 }
 
 .self_introduction_area {
+    margin-top: 1vh;
     flex-basis: 20vh;
+}
+
+.user_name {
+    font-size: 1.7em;
 }
 
 .profile_change_btn {
@@ -39,32 +46,23 @@
 }
 
 .icon_image {
-    width: 40%;
+    width: 20%;
     height: auto;
     border-radius: 50%;
-    margin-right: 1vw;
-    border-color: black;
-    border-width: 5px;
-    border-style: solid;
+    background-color: $border_color;
     z-index: 100;
+    border: 0.2vw solid $border_color;
 }
 
-.cover_image {
+.cover_image { 
+    box-sizing: content-box;
     width: 100%;
     height: auto;
     z-index: 1;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    background-color: $border_color;
+    border-bottom: 0.1vw solid $border_color;
 }
 
 .profile_detail {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
     width: 100%;
-}
-
-.yohaku {
-    padding-top: 100%;
 }

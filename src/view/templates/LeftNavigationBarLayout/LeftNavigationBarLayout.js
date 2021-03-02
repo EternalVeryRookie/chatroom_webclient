@@ -10,7 +10,9 @@ export default function LeftNavigationBarLayout(props) {
             <div className={style.navigation_bar_layout}>
                 <NavigationBar/>
             </div>
-            {props.children}
+            <div className={style.content}>
+                {props.children}
+            </div>
         </div>
     )
 }

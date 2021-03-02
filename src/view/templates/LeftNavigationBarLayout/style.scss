@@ -1,13 +1,27 @@
+$topMargin: 7vh;
+
+@mixin contentMaxHeight {
+    $offset: 3vh;
+    height: 100vh - $topMargin - $offset;
+}
+
 .page_layout {
     display: flex;
+    justify-content: center;
     align-items: flex-start;
-    margin-top: 7vh;
+    margin-top: $topMargin;
 }
 
 .navigation_bar_layout {
-    flex-basis: 20%;
-    height: 35vh;
-    min-width: 20%;
-    max-width: 20%;
-    margin-left: 7vw;
+    height: 20vw;
+    width: 10em;
+    min-height: 15vh;
+}
+
+.content {
+    overflow-y: auto;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    width: 60vw;
+    @include contentMaxHeight;
 }

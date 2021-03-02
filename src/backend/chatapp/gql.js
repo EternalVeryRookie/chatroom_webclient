@@ -79,3 +79,11 @@ export const CURRENT_USER_JOINED_PRIVATE_CHATROOM = gql `
         }
     }
 `;
+
+export const EIDT_PROFILE = gql`
+    mutation($icon: Upload, $cover_image: Upload, $self_introduction: String, $user_name: String) {
+        editProfile(icon: $icon, coverImage: $cover_image, selfIntroduction: $self_introduction, userName: $user_name) {
+            success
+        }
+    }
+`;
