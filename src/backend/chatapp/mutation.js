@@ -29,11 +29,7 @@ export function useEditUserProfile() {
                 self_introduction: selfIntroduction
             }});
         } catch (error) {
-            const errobj = error.graphQLErrors.map(err => 
-                JSON.parse(err.message.replace(/'/g, '"'))
-            );
-
-            throw errobj;
+            throw JSON.parse(error.graphQLErrors[0].message.replace(/'/g, '"'));
         }
     };
 }

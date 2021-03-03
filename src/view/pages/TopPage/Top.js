@@ -22,5 +22,5 @@ export default function Top(props) {
                 </div>
             </div>
         </LeftNavigationBarLayout>
-    )
+    );
 }

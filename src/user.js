@@ -24,10 +24,7 @@ export class User{
 }
 
 
-export const userContext = React.createContext({
-    currentUser: null,
-    setCurrentUser: (user)=> null,
-});
+export const userContext = React.createContext(null);
 
 
 export const useUser = (init) => {

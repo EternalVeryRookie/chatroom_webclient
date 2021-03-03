@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState, useContext} from "react";
 
 import BasicArea from "src/view/atoms/BasicArea.js";
 import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
+import BasicTextArea from "src/view/atoms/BasicTextArea.js";
 import ChangeableCoverImage from "src/view/organisms/ChangeableCoverImage/ChangeableCoverImage.js";
 import ChangeableIcon from "src/view/organisms/ChangeableIcon/ChangeableIcon.js";
 import PopUp from "src/view/molecules/PopUp/PopUp.js";
@@ -11,17 +12,17 @@ import {userContext} from "src/user.js";
 import {useEditUserProfile} from "src/backend/chatapp/mutation.js";
 
 import style from "./style.scss";
+import BasicTextbox from "src/view/atoms/BasicTextbox";
+import { object } from "prop-types";
 
 export default function EditProfilePopUp(props) {
     const userCtx = useContext(userContext);
-    const [isHidden, setIsHidden] = useState(true);
     const [username, setUserName] = useState(userCtx.currentUser.name);
     const [selfIntroduction, setSelfIntroduction] = useState(props.initSelfIntroduction);
     const [icon, setIcon] = useState(null);
     const [coverImage, setCoverImage] = useState(null);
     const edit = useEditUserProfile();
 
-    const onClick = (evt) => setIsHidden(false);
     const onClickSaveButton = async evt => {
         const newSelfIntroduction = (selfIntroduction == props.initSelfIntroduction)
                                     ? null: selfIntroduction;
@@ -30,21 +31,18 @@ export default function EditProfilePopUp(props) {
 
         try{
             await edit(icon, coverImage, newSelfIntroduction, newUserName);
-            setIsHidden(true);
+            props.onSave(icon, coverImage, username, selfIntroduction);
+            props.onClose();
         }catch (err) {
-            alert(err[0].username);
+            alert(Object.keys(err).reduce((prev, key) => prev + `${key}: ${err[key]}\n`, ""));
         }
     }
 
     return (<>
-            {props.btnRender(onClick)}
-            {
-                isHidden? 
-                <></>
-              : <PopUp className={style.popup_content}>
+                <PopUp className={style.popup_content}>
                     <BasicArea className={style.pop_up_header}>     
                         <BasicArea className={style.close_btn_and_tilte}>
-                            <BasicSubmitButton value="×" className={style.closeBtn} onClick={() => setIsHidden(true)}/>           
+                            <BasicSubmitButton value="×" className={style.closeBtn} onClick={props.onClose}/>           
                             <Label className={style.title}>プロフィール変更</Label>
                         </BasicArea>
                         <BasicSubmitButton className={style.save_btn} value="保存" onClick={onClickSaveButton}/>
@@ -53,12 +51,11 @@ export default function EditProfilePopUp(props) {
                     <BasicArea className={style.profile_detail_area}>
                         <ChangeableIcon onSet={setIcon} className={style.icon} src={props.iconImageSrc}></ChangeableIcon>
                         <Label>ユーザー名変更</Label>
-                        <input type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
+                        <BasicTextbox type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
                         <Label>自己紹介編集</Label>
-                        <input value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更"/>
+                        <BasicTextArea className={style.edit_self_introduction_area} value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更"/>
                     </BasicArea>
                 </PopUp>
-            }
             </>
     );
 }

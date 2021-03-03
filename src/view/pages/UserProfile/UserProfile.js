@@ -1,8 +1,8 @@
-import React, { useCallback, useContext, useEffect, useRef } from "react";
-import {Redirect} from "react-router-dom"
+import React, { useState, useContext, useEffect, useRef } from "react";
+import {Redirect} from "react-router-dom";
 import {gql, useQuery} from "@apollo/client";
 
-import {userContext} from "src/user.js";
+import {userContext, User} from "src/user.js";
 import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
 import BasicArea from "src/view/atoms/BasicArea.js";
 import EditProfilePopUp from "src/view/organisms/EditProfilePopUp/EditProfilePopUp.js";
@@ -12,13 +12,6 @@ import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/
 
 import style from "./style.scss";
 
-const MUTATION = gql`
-  mutation($icon: Upload, $cover_image: Upload, $self_introduction: String) {
-    editProfile(icon: $icon, coverImage: $cover_image, selfIntroduction: $self_introduction) {
-      success
-    }
-  }
-`;
 
 const QUERY = gql`
     query{
@@ -33,52 +26,69 @@ const QUERY = gql`
 
 export default function UserProfile(props) {
     const { loading, error, data } = useQuery(QUERY);
-    const coverImageRef = useRef(null);
-    const iconImageRef = useRef(null);
+    const [newSelfIntroduction, setNewSelfIntroduction] = useState(null);
+    const [newIcon, setNewIcon] = useState(null);
+    const [newCoverImage, setNewCoverImage] = useState(null);
     
     const userCtx = useContext(userContext);
 
     if (userCtx.currentUser == null)
         return <Redirect to="/"/>
 
-    useEffect(() => {
-        if (data) {
-            coverImageRef.current.src = data.currentUserProfile.coverImage;
-            iconImageRef.current.src = data.currentUserProfile.icon;
+    const onSave = (icon, coverImage, userName, selfIntroduction) => {
+        if (userName) {
+            const currentUser = userCtx.currentUser;
+            const newUser = new User(userName, currentUser.email, currentUser.id);
+            userCtx.signIn(newUser);
         }
-    });
+        if (icon)
+            setNewIcon(URL.createObjectURL(icon));
+
+        if (coverImage)
+            setNewCoverImage(URL.createObjectURL(coverImage));
+
+        if (selfIntroduction)
+            setNewSelfIntroduction(selfIntroduction);
+    }
     
     const Content = (
         <BasicArea className={style.user_profile_page}>
-            <Img ref={coverImageRef} className={style.cover_image}/>
+            <Img src={newCoverImage? newCoverImage: data?.currentUserProfile.coverImage} className={style.cover_image}/>
             <ProfileDetail
                 username={userCtx.currentUser.name}
-                selfIntroduction={data?.currentUserProfile.selfIntroduction}
-                iconImageRef={iconImageRef}
-                icon={data?.currentUserProfile.icon}
-                coverImage={data?.currentUserProfile.coverImage}
+                selfIntroduction={newSelfIntroduction? newSelfIntroduction : data?.currentUserProfile.selfIntroduction}
+                icon={newIcon? newIcon: data?.currentUserProfile.icon}
+                coverImage={newCoverImage? newCoverImage: data?.currentUserProfile.coverImage}
+                onSave={onSave}
             />
         </BasicArea>
     );
 
     return (
         <LeftNavigationBarLayout>
-            {loading? "loading...": Content}
+            {loading? <div>"loading..."</div>: Content}
         </LeftNavigationBarLayout>
     )
 }
 
 function ProfileDetail(props) {
+    const [isHidePopUp, setIsHidePopUp] = useState(true);
+
     return (
         <BasicArea className={style.profile_detail}>
             <BasicArea className={style.user_profile_page_middle_area}>
-                <img ref={props.iconImageRef} className={style.icon_image}/>         
-                <EditProfilePopUp 
-                    initSelfIntroduction={props.selfIntroduction}
-                    iconImageSrc={props.icon}
-                    coverImageSrc={props.coverImage} 
-                    btnRender={onClick => <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={onClick}/>}
-                />
+                <img src={props.icon} className={style.icon_image}/>         
+                <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={(evt) => setIsHidePopUp(false)}/>
+                { isHidePopUp? 
+                    null: 
+                    <EditProfilePopUp
+                        initSelfIntroduction={props.selfIntroduction}
+                        iconImageSrc={props.icon}
+                        coverImageSrc={props.coverImage}
+                        onClose={() => setIsHidePopUp(true)}
+                        onSave={props.onSave}
+                    />
+                }
             </BasicArea>
             <BasicArea className={style.user_profile_page_textarea}>
                 <Label className={style.user_name}>{props.username}</Label>

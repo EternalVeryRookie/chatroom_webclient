@@ -23,7 +23,7 @@ export function AvailableJoinChatroomEntrancies(props) {
                     })
                 }
             </> 
-        : "loading";
+        : () => <Label>loading</Label>
 
     return (
         <div className={props.className}>
@@ -57,7 +57,7 @@ export function JoiningChatroomEntrancies(props) {
                             {Entrance.map( (_, i) => <div key={i} className={style.__empty_item}></div>)}
                         </>
                 }
-            :"loading";
+            : () => <Label>loading</Label>;
 
     return (
         <div className={props.className}>

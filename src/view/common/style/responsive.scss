@@ -1,0 +1,14 @@
+$smartphone_break_point: "1/2";
+$tablet_break_point: "1/1";
+
+@mixin smartphone_style {
+    @media screen and (max-aspect-ratio: $smartphone_break_point){
+        @content;
+    }
+}
+
+@mixin tablet_style {
+    @media screen and (max-aspect-ratio: $tablet_break_point) and (min-aspect-ratio: $smartphone_break_point){
+        @content;
+    }
+}

@@ -7,13 +7,15 @@ import {CURRENT_USER} from "./backend/user.js";
 import { createUploadLink } from 'apollo-upload-client';
 import { onError } from "@apollo/client/link/error";
 
-import { ApolloProvider, InMemoryCache, ApolloClient, createHttpLink } from "@apollo/client";
+import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 
 import ENV from "ENV";
 import UserProfile from "./view/pages/UserProfile/UserProfile.js";
 import Top from "./view/pages/TopPage/Top.js";
 import Chatroom from "./view/pages/Chatroom.js";
+import JoiningRoomsPage from "./view/pages/JoiningRoomsPage/JoiningRoomsPage.js";
 
+import "./reset.scss";
 
 function App(props) {
     const userCtx = useUser(props.user);
@@ -23,6 +25,7 @@ function App(props) {
             <userContext.Provider value={userCtx}>
                 <Router>
                     <Route exact path={"/"} component={Top}/>
+                    <Route exact path={"/joiningrooms"} component={JoiningRoomsPage}/>
                     <Route exact path={"/userprofile"} component={UserProfile}/>
                     <Route exact path={"/chatroom/:id"} component={Chatroom}/>
                     <Route exact path={"/chatroom"} component={Chatroom}/>

@@ -1,21 +1,5 @@
 @import "src/view/common/style/responsive.scss";
 
-.sign_in_form__top_page {
-    display: flex;
-    flex-direction: column;    margin: 0 auto;
-    text-align: center;
-    width: 25vw;
-    min-width: 25vw;
-    margin-bottom: 5vh;
-    @include tablet_style{
-        width: 80%;
-    }
-
-    @include smartphone_style{
-        width: 95%;
-    }
-}
-
 .top_page_style {
     display: flex;
     flex-direction: column;
@@ -26,10 +10,6 @@
 .top_page_layout{
     display: flex;
     align-items: baseline;
-}
-
-.joined_chatroom_list {
-    margin-top: 3vh;
 }
 
 .entrances {

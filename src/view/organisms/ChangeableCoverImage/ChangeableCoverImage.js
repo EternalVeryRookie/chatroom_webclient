@@ -11,7 +11,7 @@ import style from "./style.scss";
 
 export default function ChangeableCoverImage(props) {
     const {src, onSet, ...others} = props;
-    const [imgSrc, setImgSrc] = useState(null);
+    const [changedImgSrc, setChangedImgSrc] = useState(null);
     const [selectImg, setSelectImg] = useState(null);
 
     const onChange = (e) =>{
@@ -19,7 +19,7 @@ export default function ChangeableCoverImage(props) {
         const reader = new FileReader();
 
         reader.addEventListener("load", () => {
-            setSelectImg(reader.result)
+            setSelectImg(reader.result);
         }, false);
         reader.readAsDataURL(selectFile);
     }
@@ -35,7 +35,7 @@ export default function ChangeableCoverImage(props) {
                             imgUrl={selectImg}
                             onCrop={(blob) => {
                                 setSelectImg(null);
-                                setImgSrc(URL.createObjectURL(blob));
+                                setChangedImgSrc(URL.createObjectURL(blob));
                                 onSet(blob);
                             }} 
                             cancelCrop={() => setSelectImg(null)}
@@ -44,7 +44,7 @@ export default function ChangeableCoverImage(props) {
                     </PopUp>
                 : null
             }
-            <ChangeableImage onChange={onChange} src={imgSrc? imgSrc: src} {...others}/>
+            <ChangeableImage onChange={onChange} src={changedImgSrc? changedImgSrc: src} {...others}/>
         </>
     )
 }
