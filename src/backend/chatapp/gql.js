@@ -1,16 +1,16 @@
 import { gql } from "@apollo/client";
 
 export const ENTER_PUBLIC_CHATROOM = gql`
-    mutation enter($var: EnterPublicChatroomInput!) {
-        enterPublicChatroom(input: $var) {
+    mutation ($roomId: ID!) {
+        enterPublicChatroom(roomId: $roomId) {
             ok      
         }
     }
 `;
 
 export const ENTER_PRIVATE_CHATROOM = gql`
-    mutation enterPrivateChatroom($var: EnterPrivateChatroomInput!) {
-        enterPrivateChatroom(input: $var) {
+    mutation ($roomId: ID!) {
+        enterPrivateChatroom(roomId: $roomId) {
             ok      
         }
     }
@@ -81,9 +81,9 @@ export const CURRENT_USER_JOINED_PRIVATE_CHATROOM = gql `
 `;
 
 export const EIDT_PROFILE = gql`
-    mutation($icon: Upload, $cover_image: Upload, $self_introduction: String, $user_name: String) {
+    mutation ($icon: Upload, $cover_image: Upload, $self_introduction: String, $user_name: String) {
         editProfile(icon: $icon, coverImage: $cover_image, selfIntroduction: $self_introduction, userName: $user_name) {
-            success
+            ok
         }
     }
 `;

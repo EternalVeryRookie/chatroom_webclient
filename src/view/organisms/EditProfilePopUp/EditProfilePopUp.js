@@ -3,8 +3,8 @@ import React, {useEffect, useRef, useState, useContext} from "react";
 import BasicArea from "src/view/atoms/BasicArea.js";
 import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
 import BasicTextArea from "src/view/atoms/BasicTextArea.js";
-import ChangeableCoverImage from "src/view/organisms/ChangeableCoverImage/ChangeableCoverImage.js";
-import ChangeableIcon from "src/view/organisms/ChangeableIcon/ChangeableIcon.js";
+import ChangeableCoverImage from "src/view/molecules/UserCoverImage/ChangeableCoverImage.js";
+import ChangeableIcon from "src/view/molecules/UserIcon/ChangeableIcon.js";
 import PopUp from "src/view/molecules/PopUp/PopUp.js";
 import Label from "src/view/atoms/Label";
 import {userContext} from "src/user.js";
@@ -47,9 +47,9 @@ export default function EditProfilePopUp(props) {
                         </BasicArea>
                         <BasicSubmitButton className={style.save_btn} value="保存" onClick={onClickSaveButton}/>
                     </BasicArea>
-                    <ChangeableCoverImage onSet={setCoverImage} className={style.cover_image} src={props.coverImageSrc}></ChangeableCoverImage>
+                    <ChangeableCoverImage onSet={setCoverImage} placementStyle={style.cover_image_area} src={props.coverImageSrc}></ChangeableCoverImage>
                     <BasicArea className={style.profile_detail_area}>
-                        <ChangeableIcon onSet={setIcon} className={style.icon} src={props.iconImageSrc}></ChangeableIcon>
+                        <ChangeableIcon onSet={setIcon} placementStyle={style.icon_area} src={props.iconImageSrc}/>
                         <Label>ユーザー名変更</Label>
                         <BasicTextbox type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
                         <Label>自己紹介編集</Label>

@@ -27,8 +27,8 @@ export default function ChangeableImage(props) {
     return (
         <div className={style.changeable_image_area}>
             <BasicFileSelectButton ref={fileRef} className={style.file_input} onChange={selectFile} accept="image/*"/>
-            <Img ref={imgRef} {...others}/>
+                <Img ref={imgRef} {...others}/>
             <BorderingLabel onClick={(e) => fileRef.current.click()} labelTranslation={translation} className={style.changeable_icon} text={c} fontSize="4em"/>
         </div>
-    )
+    );
 }

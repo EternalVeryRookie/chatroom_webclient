@@ -10,5 +10,11 @@
             "width": 1,
             "height": 1
         }
+    },
+    "selfIntroduction": {
+        "maxLength": 256
+    },
+    "userName": {
+        "maxLength": 30
     }
 }

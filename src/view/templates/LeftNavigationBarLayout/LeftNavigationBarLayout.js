@@ -13,7 +13,6 @@ export default function LeftNavigationBarLayout(props) {
             <div className={style.content}>
                 {props.children}
             </div>
-            <div className={style.yohaku}></div>
         </div>
-    )
+    );
 }

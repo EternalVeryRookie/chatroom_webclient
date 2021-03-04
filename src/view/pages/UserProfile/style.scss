@@ -4,7 +4,7 @@ $border_color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     width: 100%;
     border: thin solid $border_color;
     padding: -0.1vw;
@@ -45,22 +45,21 @@ $border_color: black;
     margin-top: 1vh;
 }
 
-.icon_image {
+.icon_image_area {
     width: 20%;
-    height: auto;
-    border-radius: 50%;
-    background-color: $border_color;
     z-index: 100;
-    border: 0.2vw solid $border_color;
 }
 
-.cover_image { 
-    box-sizing: content-box;
+.cover_image_area { 
     width: 100%;
     height: auto;
     z-index: 1;
+    box-sizing: border-box;
+    padding: 0;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: $border_color;
     background-color: $border_color;
-    border-bottom: 0.1vw solid $border_color;
 }
 
 .profile_detail {

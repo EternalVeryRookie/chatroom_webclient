@@ -8,7 +8,7 @@ function useEnterRoom(ispublic) {
 
         return async () => {
             await enter({ variables: { 
-                var: { "roomId": roomId }
+                roomId: roomId
             }});
         }
     }

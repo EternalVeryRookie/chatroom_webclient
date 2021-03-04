@@ -1,6 +1,8 @@
 @import "src/view/common/style/responsive.scss";
 
 $topMargin: 7vh;
+$navigationBarWidth: 8em;
+$contentWidth: 85vw;
 
 @mixin contentMaxHeight {
     $offset: 3vh;
@@ -19,12 +21,11 @@ $topMargin: 7vh;
 }
 
 .navigation_bar_layout {
-    height: 20vw;
-    width: 10em;
-    min-height: 15vh;
+    height: 20vh;
+    width: $navigationBarWidth;
 
     @include tablet_style {
-        width: 4em;
+        width: $navigationBarWidth/2;
     }
 
     @include smartphone_style {
@@ -36,30 +37,16 @@ $topMargin: 7vh;
     overflow-y: auto;
     padding-right: 1vw;
     padding-left: 1vw;
-    width: 60vw;
+    width: $contentWidth;
     @include contentMaxHeight;
 
     @include tablet_style {
-        width: 80vw;
+        width: $contentWidth;
         padding-left: 0;
     }
 
     @include smartphone_style {
         width: 100vw;
         padding: 0;
-    }
-}
-
-.yohaku{
-    height: 20vw;
-    width: 10em;
-    min-height: 15vh;
-
-    @include tablet_style {
-        width: 4em;
-    }
-
-    @include smartphone_style {
-        display: none;
     }
 }

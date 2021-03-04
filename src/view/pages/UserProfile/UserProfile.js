@@ -8,7 +8,10 @@ import BasicArea from "src/view/atoms/BasicArea.js";
 import EditProfilePopUp from "src/view/organisms/EditProfilePopUp/EditProfilePopUp.js";
 import Label from "src/view/atoms/Label";
 import Img from "src/view/atoms/Img";
-import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/LeftNavigationBarLayout.js"
+import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/LeftNavigationBarLayout.js";
+import LoadingIndicator from "src/view/molecules/LoadingIndicator/LoadingIndicator.js";
+import UserIcon from "src/view/molecules/UserIcon/UserIcon.js";
+import UserCoverImage from "src/view/molecules/UserCoverImage/UserCoverImage.js";
 
 import style from "./style.scss";
 
@@ -53,7 +56,7 @@ export default function UserProfile(props) {
     
     const Content = (
         <BasicArea className={style.user_profile_page}>
-            <Img src={newCoverImage? newCoverImage: data?.currentUserProfile.coverImage} className={style.cover_image}/>
+            <UserCoverImage src={newCoverImage? newCoverImage: data?.currentUserProfile.coverImage} placementStyle={style.cover_image_area}/>
             <ProfileDetail
                 username={userCtx.currentUser.name}
                 selfIntroduction={newSelfIntroduction? newSelfIntroduction : data?.currentUserProfile.selfIntroduction}
@@ -66,7 +69,7 @@ export default function UserProfile(props) {
 
     return (
         <LeftNavigationBarLayout>
-            {loading? <div>"loading..."</div>: Content}
+            {loading? <LoadingIndicator/>: Content}
         </LeftNavigationBarLayout>
     )
 }
@@ -77,7 +80,7 @@ function ProfileDetail(props) {
     return (
         <BasicArea className={style.profile_detail}>
             <BasicArea className={style.user_profile_page_middle_area}>
-                <img src={props.icon} className={style.icon_image}/>         
+                <UserIcon src={props.icon} placementStyle={style.icon_image_area}/>         
                 <BasicSubmitButton value="プロフィール変更ボタン" className={style.profile_change_btn} onClick={(evt) => setIsHidePopUp(false)}/>
                 { isHidePopUp? 
                     null: 

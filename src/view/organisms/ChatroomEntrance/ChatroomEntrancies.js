@@ -2,6 +2,7 @@ import React from "react";
 
 import {useRecommendPublicRooms, useCurrentUserJoinedPublicChatroom, useCurrentUserJoinedPrivateChatroom} from "src/backend/chatapp/query.js"
 import {PublicChatroomEntrance, PrivateChatroomEntrance} from "./ChatroomEntrance.js";
+import LoadingIndicator from "src/view/molecules/LoadingIndicator/LoadingIndicator.js";
 import Label from "src/view/atoms/Label.js";
 
 import style from "./style.scss";
@@ -23,7 +24,7 @@ export function AvailableJoinChatroomEntrancies(props) {
                     })
                 }
             </> 
-        : () => <Label>loading</Label>
+        : () => <LoadingIndicator/>
 
     return (
         <div className={props.className}>
@@ -57,7 +58,7 @@ export function JoiningChatroomEntrancies(props) {
                             {Entrance.map( (_, i) => <div key={i} className={style.__empty_item}></div>)}
                         </>
                 }
-            : () => <Label>loading</Label>;
+            : () => <LoadingIndicator/>;
 
     return (
         <div className={props.className}>

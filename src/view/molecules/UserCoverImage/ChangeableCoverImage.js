@@ -5,12 +5,13 @@ import setting from "assets/setting/user.json";
 import ChangeableImage from "src/view/molecules/ChangeableImage/ChangeableImage.js";
 import PopUp from "src/view/molecules/PopUp/PopUp.js";
 import CropImage from "src/view/molecules/CropImage/CropImage.js";
+import BasicArea from "src/view/atoms/BasicArea.js";
 
 import style from "./style.scss";
 
 
 export default function ChangeableCoverImage(props) {
-    const {src, onSet, ...others} = props;
+    const {src, onSet, placementStyle} = props;
     const [changedImgSrc, setChangedImgSrc] = useState(null);
     const [selectImg, setSelectImg] = useState(null);
 
@@ -39,12 +40,14 @@ export default function ChangeableCoverImage(props) {
                                 onSet(blob);
                             }} 
                             cancelCrop={() => setSelectImg(null)}
-                            className={style.crop_img}
+                            className={style.cropping_cover_img}
                         />
                     </PopUp>
                 : null
             }
-            <ChangeableImage onChange={onChange} src={changedImgSrc? changedImgSrc: src} {...others}/>
+            <BasicArea className={placementStyle}>
+                <ChangeableImage onChange={onChange} src={changedImgSrc? changedImgSrc: src} className={style.cover_image}/>
+            </BasicArea>
         </>
-    )
+    );
 }

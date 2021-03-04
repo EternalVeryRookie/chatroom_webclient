@@ -2,10 +2,9 @@ import React, { useContext } from "react";
 
 import SignInForm from "src/view/organisms/SignInForm/SignInForm.js";
 import WelcomeUser from "src/view/molecules/WelcomeUser.js";
-import {AvailableJoinChatroomEntrancies} from "src/view/organisms/ChatroomEntrance/ChatroomEntrancies.js"
+import {AvailableJoinChatroomEntrancies} from "src/view/organisms/ChatroomEntrance/ChatroomEntrancies.js";
 import {userContext} from "src/user.js";
-import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/LeftNavigationBarLayout.js"
-
+import LeftNavigationBarLayout from "src/view/templates/LeftNavigationBarLayout/LeftNavigationBarLayout.js";
 import style from "./style.scss";
 
 
