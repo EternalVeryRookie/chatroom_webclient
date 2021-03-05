@@ -62,7 +62,7 @@ export default function CropImage(props) {
 
         setCroppie(crop);
         cropButton.current.onclick = e => {
-            crop.result("blob").then(blob => {
+            crop.result({type: "blob", format: "png"}).then(blob => {
                 props.onCrop(blob);
             });
         }
