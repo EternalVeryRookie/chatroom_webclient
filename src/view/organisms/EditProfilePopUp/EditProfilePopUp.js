@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, useContext} from "react";
+import React, {useState, useContext} from "react";
 
 import BasicArea from "src/view/atoms/BasicArea.js";
 import BasicSubmitButton from "src/view/atoms/BasicSubmitButton";
@@ -13,8 +13,17 @@ import {useEditUserProfile} from "src/backend/chatapp/mutation.js";
 
 import style from "./style.scss";
 import BasicTextbox from "src/view/atoms/BasicTextbox";
-import { object } from "prop-types";
 
+
+/**
+ * プロフィール編集ポップアップ
+ * @param {object} props 
+ * @param {string} props.initSelfIntroduction
+ * @param {string} props.coverImageSrc
+ * @param {string} props.iconImageSrc
+ * @param {function(string, string, string, string)} props.onSave icon, coverImage, username, selfIntroductionの順番で引数に入る
+ * @param {function()} props.onClose モーダルの閉じるボタンが押されたときに呼ばれる。呼び出し元がモーダル削除処理をする。
+ */
 export default function EditProfilePopUp(props) {
     const userCtx = useContext(userContext);
     const [username, setUserName] = useState(userCtx.currentUser.name);
@@ -23,7 +32,7 @@ export default function EditProfilePopUp(props) {
     const [coverImage, setCoverImage] = useState(null);
     const edit = useEditUserProfile();
 
-    const onClickSaveButton = async evt => {
+    const onClickSaveButton = async (evt) => {
         const newSelfIntroduction = (selfIntroduction == props.initSelfIntroduction)
                                     ? null: selfIntroduction;
         const newUserName = (username == userCtx.currentUser.name)
@@ -38,24 +47,23 @@ export default function EditProfilePopUp(props) {
         }
     }
 
-    return (<>
-                <PopUp className={style.popup_content}>
-                    <BasicArea className={style.pop_up_header}>     
-                        <BasicArea className={style.close_btn_and_tilte}>
-                            <BasicSubmitButton value="×" className={style.closeBtn} onClick={props.onClose}/>           
-                            <Label className={style.title}>プロフィール変更</Label>
-                        </BasicArea>
-                        <BasicSubmitButton className={style.save_btn} value="保存" onClick={onClickSaveButton}/>
-                    </BasicArea>
-                    <ChangeableCoverImage onSet={setCoverImage} placementStyle={style.cover_image_area} src={props.coverImageSrc}></ChangeableCoverImage>
-                    <BasicArea className={style.profile_detail_area}>
-                        <ChangeableIcon onSet={setIcon} placementStyle={style.icon_area} src={props.iconImageSrc}/>
-                        <Label>ユーザー名変更</Label>
-                        <BasicTextbox type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
-                        <Label>自己紹介編集</Label>
-                        <BasicTextArea className={style.edit_self_introduction_area} value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更"/>
-                    </BasicArea>
-                </PopUp>
-            </>
+    return (
+        <PopUp className={style.popup_content}>
+            <BasicArea className={style.pop_up_header}>     
+                <BasicArea className={style.close_btn_and_tilte}>
+                    <BasicSubmitButton value="×" className={style.closeBtn} onClick={props.onClose}/>           
+                    <Label className={style.title}>プロフィール変更</Label>
+                </BasicArea>
+                <BasicSubmitButton className={style.save_btn} value="保存" onClick={onClickSaveButton}/>
+            </BasicArea>
+            <ChangeableCoverImage onSet={setCoverImage} placementStyle={style.cover_image_area} src={props.coverImageSrc}></ChangeableCoverImage>
+            <BasicArea className={style.profile_detail_area}>
+                <ChangeableIcon onSet={setIcon} placementStyle={style.icon_area} src={props.iconImageSrc}/>
+                <Label>ユーザー名変更</Label>
+                <BasicTextbox type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
+                <Label>自己紹介編集</Label>
+                <BasicTextArea className={style.edit_self_introduction_area} value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更"/>
+            </BasicArea>
+        </PopUp>
     );
 }
