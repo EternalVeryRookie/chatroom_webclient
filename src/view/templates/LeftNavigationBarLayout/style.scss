@@ -21,7 +21,7 @@ $contentWidth: 85vw;
 }
 
 .navigation_bar_layout {
-    height: 20vh;
+    height: 40vh;
     width: $navigationBarWidth;
 
     @include tablet_style {
