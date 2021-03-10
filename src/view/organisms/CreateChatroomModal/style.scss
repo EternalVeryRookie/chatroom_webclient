@@ -1,0 +1,32 @@
+.create_chatroom_modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5%;
+    padding-left: 5%;
+    box-sizing: border-box;
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    margin-bottom: 10%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.room_name_textbox {
+    margin-bottom: 3em;
+}
+
+.title {
+    font-size: 1.3em;
+}

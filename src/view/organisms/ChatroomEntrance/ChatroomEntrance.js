@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import {Redirect, Link, useHistory} from "react-router-dom"
+import React from "react";
+import {useHistory} from "react-router-dom"
 
 import Label from "src/view/atoms/Label.js"
+import BasicArea from "src/view/atoms/BasicArea.js";
 import {useEnterPrivateRoom, useEnterPublicRoom} from "src/backend/chatapp/mutation.js"
 
 import style from "./style.scss";
@@ -24,13 +25,13 @@ function ChatroomEntrance(ispublic) {
         }
 
         return (
-            <div className={props.className}>
-                <div onClick={onClick} className={style.entrance__appearance}>
+            <BasicArea className={props.className}>
+                <BasicArea onClick={onClick} className={style.entrance__appearance}>
                     <Label className={style.room_info}>{props.roomName}</Label>
                     <Label className={style.room_info}>作成者: {props.roomCreator}</Label>
                     <Label className={style.room_info}>{props.roomDescription}</Label>
-                </div>
-            </div>
+                </BasicArea>
+            </BasicArea>
         );
     }
 }

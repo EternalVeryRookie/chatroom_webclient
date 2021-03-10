@@ -1,0 +1,14 @@
+{
+    "chatroom": {
+        "coverImage": {
+            "width": 3,
+            "height": 1
+        },
+        "roomName": {
+            "maxLength": 64
+        },
+        "description": {
+            "maxLength": 256
+        }
+    }
+}

@@ -1,8 +1,14 @@
+@import "src/view/common/style/responsive.scss";
+
 .popup_content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    width: 70vw;
+    @include smartphone_style {
+        width: 90vw;
+    }
 }
 
 .pop_up_header {
@@ -60,6 +66,6 @@
 }
 
 .edit_self_introduction_area {
-    width: 50em;
+    width: 90%;
     height: 4em;
 }

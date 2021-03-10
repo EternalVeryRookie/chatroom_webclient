@@ -1,9 +1,9 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/setting/user.json":
+/***/ "./assets/profile/user.json":
 /*!**********************************!*\
-  !*** ./assets/setting/user.json ***!
+  !*** ./assets/profile/user.json ***!
   \**********************************/
 /***/ ((module) => {
 
@@ -10175,24 +10175,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function (props, ref) {
-  var _onChange = function onChange(evt) {
-    console.log(evt.target.value = evt.target.value.replace("\n", ""));
-    props.onChange(evt);
+
+var BasicTextArea = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function (props, ref) {
+  var onChange = props.onChange,
+      deleteNewLine = props.deleteNewLine,
+      others = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(props, ["onChange", "deleteNewLine"]);
+
+  var _onChange = function _onChange(evt) {
+    if (deleteNewLine) evt.target.value = evt.target.value.replace("\n", "");
+    onChange(evt);
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("textarea", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("textarea", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
     type: "textarea",
     ref: ref
-  }, props, {
-    onChange: function onChange(evt) {
-      return _onChange(evt);
-    }
+  }, others, {
+    onChange: _onChange
   }));
-}));
+});
+BasicTextArea.defaultProps = {
+  deleteNewLine: false,
+  onChange: function onChange(evt) {
+    return null;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BasicTextArea);
 
 /***/ }),
 
@@ -10780,6 +10792,44 @@ function PopUp(props) {
 
 /***/ }),
 
+/***/ "./src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js":
+/*!*******************************************************************************************!*\
+  !*** ./src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ ShowCreateChatroomPopUpButton
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/atoms/BasicArea.js */ "./src/view/atoms/BasicArea.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss");
+
+
+
+
+
+function ShowCreateChatroomPopUpButton(props) {
+  var placementStyle = props.placementStyle,
+      others = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(props, ["placementStyle"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_3__.default, {
+    className: placementStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_3__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_4__.default.background
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_3__.default, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_4__.default.show_create_chatroom_pop_up_button
+  }, others), "\u30EB\u30FC\u30E0\u4F5C\u6210")));
+}
+
+/***/ }),
+
 /***/ "./src/view/molecules/UserCoverImage/ChangeableCoverImage.js":
 /*!*******************************************************************!*\
   !*** ./src/view/molecules/UserCoverImage/ChangeableCoverImage.js ***!
@@ -10794,7 +10844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/setting/user.json */ "./assets/setting/user.json");
+/* harmony import */ var assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/profile/user.json */ "./assets/profile/user.json");
 /* harmony import */ var src_view_molecules_ChangeableImage_ChangeableImage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/molecules/ChangeableImage/ChangeableImage.js */ "./src/view/molecules/ChangeableImage/ChangeableImage.js");
 /* harmony import */ var src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/molecules/PopUp/PopUp.js */ "./src/view/molecules/PopUp/PopUp.js");
 /* harmony import */ var src_view_molecules_CropImage_CropImage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/view/molecules/CropImage/CropImage.js */ "./src/view/molecules/CropImage/CropImage.js");
@@ -10835,8 +10885,8 @@ function ChangeableCoverImage(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, selectImg ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_4__.default, {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_7__.default.crop_popup
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_CropImage_CropImage_js__WEBPACK_IMPORTED_MODULE_5__.default, {
-    cropAreaWidthRatio: assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__.coverImage.sizeRatio.width,
-    cropAreaHeightRatio: assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__.coverImage.sizeRatio.height,
+    cropAreaWidthRatio: assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__.coverImage.sizeRatio.width,
+    cropAreaHeightRatio: assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__.coverImage.sizeRatio.height,
     imgUrl: selectImg,
     onCrop: function onCrop(blob) {
       setSelectImg(null);
@@ -10914,7 +10964,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/setting/user.json */ "./assets/setting/user.json");
+/* harmony import */ var assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/profile/user.json */ "./assets/profile/user.json");
 /* harmony import */ var src_view_molecules_ChangeableImage_ChangeableImage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/molecules/ChangeableImage/ChangeableImage.js */ "./src/view/molecules/ChangeableImage/ChangeableImage.js");
 /* harmony import */ var src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/molecules/PopUp/PopUp.js */ "./src/view/molecules/PopUp/PopUp.js");
 /* harmony import */ var src_view_molecules_CropImage_CropImage_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/view/molecules/CropImage/CropImage.js */ "./src/view/molecules/CropImage/CropImage.js");
@@ -10955,8 +11005,8 @@ function ChangeableIcon(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, selectImg ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_4__.default, {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_7__.default.crop_popup
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_CropImage_CropImage_js__WEBPACK_IMPORTED_MODULE_5__.default, {
-    cropAreaWidthRatio: assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__.icon.sizeRatio.width,
-    cropAreaHeightRatio: assets_setting_user_json__WEBPACK_IMPORTED_MODULE_2__.icon.sizeRatio.height,
+    cropAreaWidthRatio: assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__.icon.sizeRatio.width,
+    cropAreaHeightRatio: assets_profile_user_json__WEBPACK_IMPORTED_MODULE_2__.icon.sizeRatio.height,
     imgUrl: selectImg,
     onCrop: function onCrop(blob) {
       setSelectImg(null);
@@ -11069,10 +11119,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var src_view_atoms_Label_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/atoms/Label.js */ "./src/view/atoms/Label.js");
-/* harmony import */ var src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/backend/chatapp/mutation.js */ "./src/backend/chatapp/mutation.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/ChatroomEntrance/style.scss");
+/* harmony import */ var src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/atoms/BasicArea.js */ "./src/view/atoms/BasicArea.js");
+/* harmony import */ var src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/backend/chatapp/mutation.js */ "./src/backend/chatapp/mutation.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/ChatroomEntrance/style.scss");
+
 
 
 
@@ -11084,8 +11136,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function ChatroomEntrance(ispublic) {
   return function (props) {
-    var enter = ispublic ? (0,src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_4__.useEnterPublicRoom)(props.roomId) : (0,src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_4__.useEnterPrivateRoom)(props.roomId);
-    var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useHistory)();
+    var enter = ispublic ? (0,src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_5__.useEnterPublicRoom)(props.roomId) : (0,src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_5__.useEnterPrivateRoom)(props.roomId);
+    var history = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useHistory)();
 
     var onClick = /*#__PURE__*/function () {
       var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -11123,17 +11175,17 @@ function ChatroomEntrance(ispublic) {
       };
     }();
 
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__.default, {
       className: props.className
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__.default, {
       onClick: onClick,
-      className: _style_scss__WEBPACK_IMPORTED_MODULE_5__.default.entrance__appearance
+      className: _style_scss__WEBPACK_IMPORTED_MODULE_6__.default.entrance__appearance
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_Label_js__WEBPACK_IMPORTED_MODULE_3__.default, {
-      className: _style_scss__WEBPACK_IMPORTED_MODULE_5__.default.room_info
+      className: _style_scss__WEBPACK_IMPORTED_MODULE_6__.default.room_info
     }, props.roomName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_Label_js__WEBPACK_IMPORTED_MODULE_3__.default, {
-      className: _style_scss__WEBPACK_IMPORTED_MODULE_5__.default.room_info
+      className: _style_scss__WEBPACK_IMPORTED_MODULE_6__.default.room_info
     }, "\u4F5C\u6210\u8005: ", props.roomCreator), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(src_view_atoms_Label_js__WEBPACK_IMPORTED_MODULE_3__.default, {
-      className: _style_scss__WEBPACK_IMPORTED_MODULE_5__.default.room_info
+      className: _style_scss__WEBPACK_IMPORTED_MODULE_6__.default.room_info
     }, props.roomDescription)));
   };
 }
@@ -11250,6 +11302,85 @@ function JoiningChatroomEntrancies(props) {
 
 /***/ }),
 
+/***/ "./src/view/organisms/CreateChatroomModal/CreateChatroomModal.js":
+/*!***********************************************************************!*\
+  !*** ./src/view/organisms/CreateChatroomModal/CreateChatroomModal.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateChatroomModal
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/slicedToArray */ "./node_modules/@babel/runtime/helpers/slicedToArray.js");
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var src_view_atoms_BasicTextArea__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/view/atoms/BasicTextArea */ "./src/view/atoms/BasicTextArea.js");
+/* harmony import */ var src_view_atoms_BasicTextbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/atoms/BasicTextbox */ "./src/view/atoms/BasicTextbox.js");
+/* harmony import */ var src_view_atoms_Label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/atoms/Label */ "./src/view/atoms/Label.js");
+/* harmony import */ var src_view_atoms_BasicArea__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/view/atoms/BasicArea */ "./src/view/atoms/BasicArea.js");
+/* harmony import */ var src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/view/molecules/PopUp/PopUp.js */ "./src/view/molecules/PopUp/PopUp.js");
+/* harmony import */ var src_view_molecules_ShowCreateChatroomPopUpButton_ShowCreateChatroomPopUpButton_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js */ "./src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/CreateChatroomModal/style.scss");
+
+
+
+
+
+
+
+
+
+/**
+ * ・ルーム名
+ * ・public or private
+ * ・カバー画像
+ * ・ルームの説明
+ * @param {*} props 
+ */
+
+function CreateChatroomModalContent(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_BasicArea__WEBPACK_IMPORTED_MODULE_5__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.create_chatroom_modal
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_BasicArea__WEBPACK_IMPORTED_MODULE_5__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.header
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_Label__WEBPACK_IMPORTED_MODULE_4__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.title
+  }, "\u30EB\u30FC\u30E0\u3092\u4F5C\u6210\u3059\u308B"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_Label__WEBPACK_IMPORTED_MODULE_4__.default, null, "\xD7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_BasicArea__WEBPACK_IMPORTED_MODULE_5__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.content
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_BasicTextbox__WEBPACK_IMPORTED_MODULE_3__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.room_name_textbox,
+    placeholder: "\u30EB\u30FC\u30E0\u540D"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_atoms_BasicTextArea__WEBPACK_IMPORTED_MODULE_2__.default, {
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_8__.default.room_descriptioin_textarea,
+    placeholder: "\u8AAC\u660E"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    type: "checkbox",
+    value: "public"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    type: "file"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("input", {
+    type: "button",
+    value: "\u4F5C\u6210"
+  })));
+}
+
+function CreateChatroomModal(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+      isShow = _useState2[0],
+      setIsShow = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_ShowCreateChatroomPopUpButton_ShowCreateChatroomPopUpButton_js__WEBPACK_IMPORTED_MODULE_7__.default, {
+    onClick: function onClick() {
+      return setIsShow(true);
+    }
+  }), isShow ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_6__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(CreateChatroomModalContent, null)) : null);
+}
+
+/***/ }),
+
 /***/ "./src/view/organisms/EditProfilePopUp/EditProfilePopUp.js":
 /*!*****************************************************************!*\
   !*** ./src/view/organisms/EditProfilePopUp/EditProfilePopUp.js ***!
@@ -11279,8 +11410,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_backend_chatapp_mutation_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! src/backend/chatapp/mutation.js */ "./src/backend/chatapp/mutation.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/EditProfilePopUp/style.scss");
 /* harmony import */ var src_view_atoms_BasicTextbox__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/view/atoms/BasicTextbox */ "./src/view/atoms/BasicTextbox.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_15__);
 
 
 
@@ -11296,6 +11425,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/**
+ * プロフィール編集ポップアップ
+ * @param {object} props 
+ * @param {string} props.initSelfIntroduction
+ * @param {string} props.coverImageSrc
+ * @param {string} props.iconImageSrc
+ * @param {function(string, string, string, string)} props.onSave icon, coverImage, username, selfIntroductionの順番で引数に入る
+ * @param {function()} props.onClose モーダルの閉じるボタンが押されたときに呼ばれる。呼び出し元がモーダル削除処理をする。
+ */
 
 function EditProfilePopUp(props) {
   var userCtx = (0,react__WEBPACK_IMPORTED_MODULE_3__.useContext)(src_user_js__WEBPACK_IMPORTED_MODULE_11__.userContext);
@@ -11361,7 +11499,7 @@ function EditProfilePopUp(props) {
     };
   }();
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_9__.default, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(src_view_molecules_PopUp_PopUp_js__WEBPACK_IMPORTED_MODULE_9__.default, {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_13__.default.popup_content
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__.default, {
     className: _style_scss__WEBPACK_IMPORTED_MODULE_13__.default.pop_up_header
@@ -11401,8 +11539,9 @@ function EditProfilePopUp(props) {
       return setSelfIntroduction(evt.target.value);
     },
     type: "text",
-    placeholder: "\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u5909\u66F4"
-  }))));
+    placeholder: "\u30D7\u30ED\u30D5\u30A3\u30FC\u30EB\u5909\u66F4",
+    deleteNewLine: true
+  })));
 }
 
 /***/ }),
@@ -11423,7 +11562,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_view_molecules_Navigators_JoiningRoomsNavigator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/view/molecules/Navigators/JoiningRoomsNavigator.js */ "./src/view/molecules/Navigators/JoiningRoomsNavigator.js");
 /* harmony import */ var src_view_molecules_Navigators_ProfileNavigator_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/view/molecules/Navigators/ProfileNavigator.js */ "./src/view/molecules/Navigators/ProfileNavigator.js");
 /* harmony import */ var src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/view/atoms/BasicArea.js */ "./src/view/atoms/BasicArea.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/NavigationBar/style.scss");
+/* harmony import */ var src_view_molecules_ShowCreateChatroomPopUpButton_ShowCreateChatroomPopUpButton_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js */ "./src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js");
+/* harmony import */ var src_view_organisms_CreateChatroomModal_CreateChatroomModal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/view/organisms/CreateChatroomModal/CreateChatroomModal.js */ "./src/view/organisms/CreateChatroomModal/CreateChatroomModal.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.scss */ "./src/view/organisms/NavigationBar/style.scss");
+
+
 
 
 
@@ -11432,8 +11575,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function NavigationBar(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_atoms_BasicArea_js__WEBPACK_IMPORTED_MODULE_4__.default, {
-    className: _style_scss__WEBPACK_IMPORTED_MODULE_5__.default.navigation_bar_style
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_EntranceNavigator_js__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_JoiningRoomsNavigator_js__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_ProfileNavigator_js__WEBPACK_IMPORTED_MODULE_3__.default, null));
+    className: _style_scss__WEBPACK_IMPORTED_MODULE_7__.default.navigation_bar_style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_organisms_CreateChatroomModal_CreateChatroomModal_js__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_EntranceNavigator_js__WEBPACK_IMPORTED_MODULE_1__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_JoiningRoomsNavigator_js__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(src_view_molecules_Navigators_ProfileNavigator_js__WEBPACK_IMPORTED_MODULE_3__.default, null));
 }
 
 /***/ }),
@@ -12068,11 +12211,42 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._1G4ymFpN9PIMNbULYW87o0 {\n  background: rgba(0, 0, 0, 0.7);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 10000;\n  width: 100%;\n  height: 100%;\n}\n\n._2kffu14AdPpEgn6E-651eR {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  border-radius: 10px;\n  padding-top: 1vh;\n  padding-bottom: 2vh;\n  box-sizing: border-box;\n  background-color: darkslateblue;\n}", "",{"version":3,"sources":["webpack://./src/view/molecules/PopUp/style.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,cAAA;EACA,WAAA;EACA,YAAA;AACJ;;AAEA;EACI,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,mBAAA;EACA,gBAAA;EACA,mBAAA;EACA,sBAAA;EACA,+BAAA;AACJ","sourcesContent":[".pop_up {\n    background: rgba(0, 0, 0, 0.7);\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 10000;\n    width: 100%;\n    height: 100%;\n}\n\n.pop_up_content {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 10px;\n    padding-top: 1vh;\n    padding-bottom: 2vh;\n    box-sizing: border-box;\n    background-color: darkslateblue;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "._1G4ymFpN9PIMNbULYW87o0 {\n  background: rgba(0, 0, 0, 0.7);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 10000;\n  width: 100%;\n  height: 100%;\n}\n\n._2kffu14AdPpEgn6E-651eR {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  border-radius: 10px;\n  padding-top: 1vh;\n  padding-bottom: 2vh;\n  box-sizing: border-box;\n  background-color: darkslateblue;\n}\n@media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 1/2) {\n  ._2kffu14AdPpEgn6E-651eR {\n    transform: translate(-50%, -75%);\n  }\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  ._2kffu14AdPpEgn6E-651eR {\n    transform: translate(-50%, -75%);\n  }\n}", "",{"version":3,"sources":["webpack://./src/view/molecules/PopUp/style.scss","webpack://./src/view/common/style/responsive.scss"],"names":[],"mappings":"AAGA;EACI,8BAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,cAAA;EACA,WAAA;EACA,YAAA;AAFJ;;AAKA;EACI,kBAAA;EACA,QAAA;EACA,SAAA;EACA,gCAAA;EACA,mBAAA;EACA,gBAAA;EACA,mBAAA;EACA,sBAAA;EACA,+BAAA;AAFJ;ACVI;EDGJ;IAYQ,gCAAA;EADN;AACF;ACrBI;EDSJ;IAgBQ,gCAAA;EAAN;AACF","sourcesContent":["@import \"src/view/common/style/responsive.scss\";\n\n\n.pop_up {\n    background: rgba(0, 0, 0, 0.7);\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 10000;\n    width: 100%;\n    height: 100%;\n}\n\n.pop_up_content {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    border-radius: 10px;\n    padding-top: 1vh;\n    padding-bottom: 2vh;\n    box-sizing: border-box;\n    background-color: darkslateblue;\n\n    @include tablet_style {\n        transform: translate(-50%, -75%);\n    }\n\n    @include smartphone_style {\n        transform: translate(-50%, -75%);\n    }\n}","$smartphone_break_point: \"1/2\";\n$tablet_break_point: \"1/1\";\n\n@mixin smartphone_style {\n    @media screen and (max-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}\n\n@mixin tablet_style {\n    @media screen and (max-aspect-ratio: $tablet_break_point) and (min-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"pop_up": "_1G4ymFpN9PIMNbULYW87o0",
 	"pop_up_content": "_2kffu14AdPpEgn6E-651eR"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss ***!
+  \******************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "._2cwzwwWImiPNS-pfkvRF6U {\n  background-color: blue;\n  white-space: nowrap;\n  width: 10%;\n  color: white;\n  transition: width 300ms 0s ease;\n  box-sizing: border-box;\n}\n\n._1liDT1wU8FWnMQU6fUleXP {\n  background-color: black;\n}\n._1liDT1wU8FWnMQU6fUleXP:hover {\n  cursor: pointer;\n}\n._1liDT1wU8FWnMQU6fUleXP:hover ._2cwzwwWImiPNS-pfkvRF6U {\n  width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss"],"names":[],"mappings":"AAAA;EACE,sBAAA;EACA,mBAAA;EACA,UAAA;EACA,YAAA;EACA,+BAAA;EACA,sBAAA;AACF;;AAEA;EACE,uBAAA;AACF;AAAE;EAKE,eAAA;AAFJ;AAFI;EACE,WAAA;AAIN","sourcesContent":[".show_create_chatroom_pop_up_button {\n  background-color: blue;\n  white-space: nowrap;\n  width: 10%;\n  color: white;\n  transition: width 300ms 0s ease;\n  box-sizing: border-box;\n}\n\n.background {\n  background-color: black;\n  &:hover {\n    .show_create_chatroom_pop_up_button {\n      width: 100%;\n    }\n\n    cursor: pointer;\n  }\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"show_create_chatroom_pop_up_button": "_2cwzwwWImiPNS-pfkvRF6U",
+	"background": "_1liDT1wU8FWnMQU6fUleXP"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12206,6 +12380,40 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/CreateChatroomModal/style.scss":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/CreateChatroomModal/style.scss ***!
+  \********************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "._72qNWNjKnkToSTXAAFVx3 {\n  display: flex;\n  flex-direction: column;\n}\n\n.xmuVTRxytQ8YF6SCq5hE_ {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  padding-right: 5%;\n  padding-left: 5%;\n  box-sizing: border-box;\n  border-bottom-color: white;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  margin-bottom: 10%;\n}\n\n._21jO3PYy7AtyvyhZ9GXDsK {\n  display: flex;\n  flex-direction: column;\n  padding-right: 5%;\n  padding-left: 5%;\n}\n\n._2pJde2gX6VqRAxk2blR3ZW {\n  margin-bottom: 3em;\n}\n\n._1iH8HW1sItuhUJO_8il--e {\n  font-size: 1.3em;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/CreateChatroomModal/style.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,iBAAA;EACA,gBAAA;EACA,sBAAA;EACA,0BAAA;EACA,wBAAA;EACA,0BAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,iBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,kBAAA;AACJ;;AAEA;EACI,gBAAA;AACJ","sourcesContent":[".create_chatroom_modal {\n    display: flex;\n    flex-direction: column;\n}\n\n.header {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    padding-right: 5%;\n    padding-left: 5%;\n    box-sizing: border-box;\n    border-bottom-color: white;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    margin-bottom: 10%;\n}\n\n.content {\n    display: flex;\n    flex-direction: column;\n    padding-right: 5%;\n    padding-left: 5%;\n}\n\n.room_name_textbox {\n    margin-bottom: 3em;\n}\n\n.title {\n    font-size: 1.3em;\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"create_chatroom_modal": "_72qNWNjKnkToSTXAAFVx3",
+	"header": "xmuVTRxytQ8YF6SCq5hE_",
+	"content": "_21jO3PYy7AtyvyhZ9GXDsK",
+	"room_name_textbox": "_2pJde2gX6VqRAxk2blR3ZW",
+	"title": "_1iH8HW1sItuhUJO_8il--e"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/EditProfilePopUp/style.scss":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/EditProfilePopUp/style.scss ***!
@@ -12226,7 +12434,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._3_L3MG6AxULHZxrkSQ0TZ8 {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n}\n\n._1EaSeHJ8nGMe0ry_6Nsw64 {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  padding-bottom: 1%;\n  border-bottom: blue;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n}\n\n.VGGottkGnS1fltFKndP2g {\n  display: flex;\n  width: 70%;\n}\n\n.VGGottkGnS1fltFKndP2g * {\n  margin-left: 1vw;\n}\n\n._2okiSfSXoZApwod4JR8NFM {\n  font-size: 1.2em;\n  align-self: center;\n}\n\n.bixwhxGcxnDqm0_RXqK1S {\n  align-self: center;\n}\n\n._2pKL-FhY5wLbK9EUwOdtBs {\n  width: 100%;\n  height: auto;\n  border-bottom-style: solid;\n  border-bottom-color: black;\n  border-bottom-width: 2px;\n  background-color: black;\n}\n\n._33HyGHpQCT_zJ7UwFzZX4I {\n  width: 40%;\n  height: auto;\n  margin-right: 1vw;\n}\n\n._2HuVoyNPTtf3QPtyBay58k {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n  margin-left: 1vw;\n  margin-top: -11%;\n}\n\n._15M8SBZHwBo1CHxQJ7PmPj {\n  width: 50em;\n  height: 4em;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/EditProfilePopUp/style.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,oBAAA;AACJ;;AAEA;EACI,WAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;EACA,mBAAA;EACA,0BAAA;EACA,wBAAA;AACJ;;AAEA;EACI,aAAA;EACA,UAAA;AACJ;;AAEA;EACI,gBAAA;AACJ;;AAEA;EACI,gBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,kBAAA;AACJ;;AAEA;EACI,WAAA;EACA,YAAA;EACA,0BAAA;EACA,0BAAA;EACA,wBAAA;EACA,uBAAA;AACJ;;AAEA;EACI,UAAA;EACA,YAAA;EACA,iBAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,uBAAA;EACA,gBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,WAAA;EACA,WAAA;AACJ","sourcesContent":[".popup_content {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: stretch;\n}\n\n.pop_up_header {\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding-bottom: 1%;\n    border-bottom: blue;\n    border-bottom-style: solid;\n    border-bottom-width: 2px;\n}\n\n.close_btn_and_tilte {\n    display: flex;\n    width: 70%;\n}\n\n.close_btn_and_tilte *{\n    margin-left: 1vw;\n}\n\n.title {\n    font-size: 1.2em;\n    align-self: center;\n}\n\n.closeBtn {\n    align-self: center;\n}\n\n.cover_image_area {\n    width: 100%;\n    height: auto;\n    border-bottom-style: solid;\n    border-bottom-color: black;\n    border-bottom-width: 2px;\n    background-color: black;\n}\n\n.icon_area {    \n    width: 40%;\n    height: auto;\n    margin-right: 1vw;\n}\n\n.profile_detail_area{\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    margin-left: 1vw;\n    margin-top: -11%;\n}\n\n.edit_self_introduction_area {\n    width: 50em;\n    height: 4em;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "._3_L3MG6AxULHZxrkSQ0TZ8 {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  width: 70vw;\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  ._3_L3MG6AxULHZxrkSQ0TZ8 {\n    width: 90vw;\n  }\n}\n\n._1EaSeHJ8nGMe0ry_6Nsw64 {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  padding-bottom: 1%;\n  border-bottom: blue;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n}\n\n.VGGottkGnS1fltFKndP2g {\n  display: flex;\n  width: 70%;\n}\n\n.VGGottkGnS1fltFKndP2g * {\n  margin-left: 1vw;\n}\n\n._2okiSfSXoZApwod4JR8NFM {\n  font-size: 1.2em;\n  align-self: center;\n}\n\n.bixwhxGcxnDqm0_RXqK1S {\n  align-self: center;\n}\n\n._2pKL-FhY5wLbK9EUwOdtBs {\n  width: 100%;\n  height: auto;\n  border-bottom-style: solid;\n  border-bottom-color: black;\n  border-bottom-width: 2px;\n  background-color: black;\n}\n\n._33HyGHpQCT_zJ7UwFzZX4I {\n  width: 40%;\n  height: auto;\n  margin-right: 1vw;\n}\n\n._2HuVoyNPTtf3QPtyBay58k {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n  margin-left: 1vw;\n  margin-top: -11%;\n}\n\n._15M8SBZHwBo1CHxQJ7PmPj {\n  width: 90%;\n  height: 4em;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/EditProfilePopUp/style.scss","webpack://./src/view/common/style/responsive.scss"],"names":[],"mappings":"AAEA;EACI,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,oBAAA;EACA,WAAA;AADJ;ACFI;EDFJ;IAOQ,WAAA;EACN;AACF;;AAEA;EACI,WAAA;EACA,aAAA;EACA,mBAAA;EACA,8BAAA;EACA,mBAAA;EACA,kBAAA;EACA,mBAAA;EACA,0BAAA;EACA,wBAAA;AACJ;;AAEA;EACI,aAAA;EACA,UAAA;AACJ;;AAEA;EACI,gBAAA;AACJ;;AAEA;EACI,gBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,kBAAA;AACJ;;AAEA;EACI,WAAA;EACA,YAAA;EACA,0BAAA;EACA,0BAAA;EACA,wBAAA;EACA,uBAAA;AACJ;;AAEA;EACI,UAAA;EACA,YAAA;EACA,iBAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,2BAAA;EACA,uBAAA;EACA,gBAAA;EACA,gBAAA;AACJ;;AAEA;EACI,UAAA;EACA,WAAA;AACJ","sourcesContent":["@import \"src/view/common/style/responsive.scss\";\n\n.popup_content {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: stretch;\n    width: 70vw;\n    @include smartphone_style {\n        width: 90vw;\n    }\n}\n\n.pop_up_header {\n    width: 100%;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    padding-bottom: 1%;\n    border-bottom: blue;\n    border-bottom-style: solid;\n    border-bottom-width: 2px;\n}\n\n.close_btn_and_tilte {\n    display: flex;\n    width: 70%;\n}\n\n.close_btn_and_tilte *{\n    margin-left: 1vw;\n}\n\n.title {\n    font-size: 1.2em;\n    align-self: center;\n}\n\n.closeBtn {\n    align-self: center;\n}\n\n.cover_image_area {\n    width: 100%;\n    height: auto;\n    border-bottom-style: solid;\n    border-bottom-color: black;\n    border-bottom-width: 2px;\n    background-color: black;\n}\n\n.icon_area {    \n    width: 40%;\n    height: auto;\n    margin-right: 1vw;\n}\n\n.profile_detail_area{\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: flex-start;\n    margin-left: 1vw;\n    margin-top: -11%;\n}\n\n.edit_self_introduction_area {\n    width: 90%;\n    height: 4em;\n}","$smartphone_break_point: \"1/2\";\n$tablet_break_point: \"1/1\";\n\n@mixin smartphone_style {\n    @media screen and (max-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}\n\n@mixin tablet_style {\n    @media screen and (max-aspect-ratio: $tablet_break_point) and (min-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"popup_content": "_3_L3MG6AxULHZxrkSQ0TZ8",
@@ -12264,7 +12472,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._2w7FslYi9CWQ_4Wqc6H2I0 {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/NavigationBar/style.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,YAAA;AACJ","sourcesContent":[".navigation_bar_style {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    height: 100%;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "._2w7FslYi9CWQ_4Wqc6H2I0 {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n}", "",{"version":3,"sources":["webpack://./src/view/organisms/NavigationBar/style.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,8BAAA;EACA,YAAA;AACJ","sourcesContent":[".navigation_bar_style {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    height: 100%;\n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"navigation_bar_style": "_2w7FslYi9CWQ_4Wqc6H2I0"
@@ -12433,7 +12641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".kXXQZIw-8wdsJGnfz8RcD {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  margin-top: 7vh;\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  .kXXQZIw-8wdsJGnfz8RcD {\n    margin-top: 2.3333333333vh;\n  }\n}\n\n.ovoymtjvhRRpGSRH0BdgS {\n  height: 20vh;\n  width: 8em;\n}\n@media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 1/2) {\n  .ovoymtjvhRRpGSRH0BdgS {\n    width: 4em;\n  }\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  .ovoymtjvhRRpGSRH0BdgS {\n    display: none;\n  }\n}\n\n._2eIYDmFreDUyqVL-yzBwXU {\n  overflow-y: auto;\n  padding-right: 1vw;\n  padding-left: 1vw;\n  width: 85vw;\n  height: 90vh;\n}\n@media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 1/2) {\n  ._2eIYDmFreDUyqVL-yzBwXU {\n    width: 85vw;\n    padding-left: 0;\n  }\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  ._2eIYDmFreDUyqVL-yzBwXU {\n    width: 100vw;\n    padding: 0;\n  }\n}", "",{"version":3,"sources":["webpack://./src/view/templates/LeftNavigationBarLayout/style.scss","webpack://./src/view/common/style/responsive.scss"],"names":[],"mappings":"AAWA;EACI,aAAA;EACA,uBAAA;EACA,uBAAA;EACA,eAbQ;AAGZ;ACDI;EDOJ;IAOQ,0BAAA;EATN;AACF;;AAYA;EACI,YAAA;EACA,UArBiB;AAYrB;ACLI;EDYJ;IAKQ,UAAA;EARN;AACF;AChBI;EDkBJ;IASQ,aAAA;EAPN;AACF;;AAUA;EACI,gBAAA;EACA,kBAAA;EACA,iBAAA;EACA,WAnCW;EAIX,YAAA;AAyBJ;ACvBI;EDyBJ;IAQQ,WAvCO;IAwCP,eAAA;EANN;AACF;ACnCI;ED+BJ;IAaQ,YAAA;IACA,UAAA;EALN;AACF","sourcesContent":["@import \"src/view/common/style/responsive.scss\";\n\n$topMargin: 7vh;\n$navigationBarWidth: 8em;\n$contentWidth: 85vw;\n\n@mixin contentMaxHeight {\n    $offset: 3vh;\n    height: 100vh - $topMargin - $offset;\n}\n\n.page_layout {\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    margin-top: $topMargin;\n\n    @include smartphone_style {\n        margin-top: $topMargin/3;\n    }\n}\n\n.navigation_bar_layout {\n    height: 20vh;\n    width: $navigationBarWidth;\n\n    @include tablet_style {\n        width: $navigationBarWidth/2;\n    }\n\n    @include smartphone_style {\n        display: none;\n    }\n}\n\n.content {\n    overflow-y: auto;\n    padding-right: 1vw;\n    padding-left: 1vw;\n    width: $contentWidth;\n    @include contentMaxHeight;\n\n    @include tablet_style {\n        width: $contentWidth;\n        padding-left: 0;\n    }\n\n    @include smartphone_style {\n        width: 100vw;\n        padding: 0;\n    }\n}","$smartphone_break_point: \"1/2\";\n$tablet_break_point: \"1/1\";\n\n@mixin smartphone_style {\n    @media screen and (max-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}\n\n@mixin tablet_style {\n    @media screen and (max-aspect-ratio: $tablet_break_point) and (min-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".kXXQZIw-8wdsJGnfz8RcD {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  margin-top: 7vh;\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  .kXXQZIw-8wdsJGnfz8RcD {\n    margin-top: 2.3333333333vh;\n  }\n}\n\n.ovoymtjvhRRpGSRH0BdgS {\n  height: 40vh;\n  width: 8em;\n}\n@media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 1/2) {\n  .ovoymtjvhRRpGSRH0BdgS {\n    width: 4em;\n  }\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  .ovoymtjvhRRpGSRH0BdgS {\n    display: none;\n  }\n}\n\n._2eIYDmFreDUyqVL-yzBwXU {\n  overflow-y: auto;\n  padding-right: 1vw;\n  padding-left: 1vw;\n  width: 85vw;\n  height: 90vh;\n}\n@media screen and (max-aspect-ratio: 1/1) and (min-aspect-ratio: 1/2) {\n  ._2eIYDmFreDUyqVL-yzBwXU {\n    width: 85vw;\n    padding-left: 0;\n  }\n}\n@media screen and (max-aspect-ratio: 1/2) {\n  ._2eIYDmFreDUyqVL-yzBwXU {\n    width: 100vw;\n    padding: 0;\n  }\n}", "",{"version":3,"sources":["webpack://./src/view/templates/LeftNavigationBarLayout/style.scss","webpack://./src/view/common/style/responsive.scss"],"names":[],"mappings":"AAWA;EACI,aAAA;EACA,uBAAA;EACA,uBAAA;EACA,eAbQ;AAGZ;ACDI;EDOJ;IAOQ,0BAAA;EATN;AACF;;AAYA;EACI,YAAA;EACA,UArBiB;AAYrB;ACLI;EDYJ;IAKQ,UAAA;EARN;AACF;AChBI;EDkBJ;IASQ,aAAA;EAPN;AACF;;AAUA;EACI,gBAAA;EACA,kBAAA;EACA,iBAAA;EACA,WAnCW;EAIX,YAAA;AAyBJ;ACvBI;EDyBJ;IAQQ,WAvCO;IAwCP,eAAA;EANN;AACF;ACnCI;ED+BJ;IAaQ,YAAA;IACA,UAAA;EALN;AACF","sourcesContent":["@import \"src/view/common/style/responsive.scss\";\n\n$topMargin: 7vh;\n$navigationBarWidth: 8em;\n$contentWidth: 85vw;\n\n@mixin contentMaxHeight {\n    $offset: 3vh;\n    height: 100vh - $topMargin - $offset;\n}\n\n.page_layout {\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    margin-top: $topMargin;\n\n    @include smartphone_style {\n        margin-top: $topMargin/3;\n    }\n}\n\n.navigation_bar_layout {\n    height: 40vh;\n    width: $navigationBarWidth;\n\n    @include tablet_style {\n        width: $navigationBarWidth/2;\n    }\n\n    @include smartphone_style {\n        display: none;\n    }\n}\n\n.content {\n    overflow-y: auto;\n    padding-right: 1vw;\n    padding-left: 1vw;\n    width: $contentWidth;\n    @include contentMaxHeight;\n\n    @include tablet_style {\n        width: $contentWidth;\n        padding-left: 0;\n    }\n\n    @include smartphone_style {\n        width: 100vw;\n        padding: 0;\n    }\n}","$smartphone_break_point: \"1/2\";\n$tablet_break_point: \"1/1\";\n\n@mixin smartphone_style {\n    @media screen and (max-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}\n\n@mixin tablet_style {\n    @media screen and (max-aspect-ratio: $tablet_break_point) and (min-aspect-ratio: $smartphone_break_point){\n        @content;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"page_layout": "kXXQZIw-8wdsJGnfz8RcD",
@@ -53656,6 +53864,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss":
+/*!*********************************************************************!*\
+  !*** ./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/molecules/ShowCreateChatroomPopUpButton/style.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./src/view/molecules/UserCoverImage/style.scss":
 /*!******************************************************!*\
   !*** ./src/view/molecules/UserCoverImage/style.scss ***!
@@ -53760,6 +53998,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/ChatroomEntrance/style.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./src/view/organisms/CreateChatroomModal/style.scss":
+/*!***********************************************************!*\
+  !*** ./src/view/organisms/CreateChatroomModal/style.scss ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_0_use_1_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./style.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/view/organisms/CreateChatroomModal/style.scss");
 
             
 

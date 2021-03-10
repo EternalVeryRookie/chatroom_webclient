@@ -1,3 +1,6 @@
+@import "src/view/common/style/responsive.scss";
+
+
 .pop_up {
     background: rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -18,4 +21,12 @@
     padding-bottom: 2vh;
     box-sizing: border-box;
     background-color: darkslateblue;
+
+    @include tablet_style {
+        transform: translate(-50%, -75%);
+    }
+
+    @include smartphone_style {
+        transform: translate(-50%, -75%);
+    }
 }

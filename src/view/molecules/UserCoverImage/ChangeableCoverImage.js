@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import setting from "assets/setting/user.json";
+import profile from "assets/profile/user.json";
 
 import ChangeableImage from "src/view/molecules/ChangeableImage/ChangeableImage.js";
 import PopUp from "src/view/molecules/PopUp/PopUp.js";
@@ -31,8 +31,8 @@ export default function ChangeableCoverImage(props) {
                 selectImg?
                     <PopUp className={style.crop_popup}>
                         <CropImage 
-                            cropAreaWidthRatio={setting["coverImage"]["sizeRatio"]["width"]} 
-                            cropAreaHeightRatio={setting["coverImage"]["sizeRatio"]["height"]} 
+                            cropAreaWidthRatio={profile["coverImage"]["sizeRatio"]["width"]} 
+                            cropAreaHeightRatio={profile["coverImage"]["sizeRatio"]["height"]} 
                             imgUrl={selectImg}
                             onCrop={(blob) => {
                                 setSelectImg(null);

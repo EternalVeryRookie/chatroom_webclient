@@ -5,13 +5,14 @@ import JoiningRoomsNavigator from "src/view/molecules/Navigators/JoiningRoomsNav
 import ProfileNavigator from "src/view/molecules/Navigators/ProfileNavigator.js";
 import BasicArea from "src/view/atoms/BasicArea.js";
 import ShowCreateChatroomPopUpButton from "src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js";
+import CreateChatroomModal from "src/view/organisms/CreateChatroomModal/CreateChatroomModal.js";
 
 import style from "./style.scss";
 
 export default function NavigationBar(props) {
     return (
         <BasicArea className={style.navigation_bar_style}>
-            <ShowCreateChatroomPopUpButton/>
+            <CreateChatroomModal/>
             <EntranceNavigator/>
             <JoiningRoomsNavigator/>
             <ProfileNavigator/>

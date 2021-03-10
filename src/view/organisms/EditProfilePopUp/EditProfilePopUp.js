@@ -62,7 +62,7 @@ export default function EditProfilePopUp(props) {
                 <Label>ユーザー名変更</Label>
                 <BasicTextbox type="text" value={username} onChange={(evt) => setUserName(evt.target.value)} placeholder="ユーザー名変更"/>
                 <Label>自己紹介編集</Label>
-                <BasicTextArea className={style.edit_self_introduction_area} value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更"/>
+                <BasicTextArea className={style.edit_self_introduction_area} value={selfIntroduction} onChange={(evt) => setSelfIntroduction(evt.target.value)} type="text" placeholder="プロフィール変更" deleteNewLine={true}/>
             </BasicArea>
         </PopUp>
     );
