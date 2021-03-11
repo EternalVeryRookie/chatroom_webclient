@@ -1,6 +1,6 @@
 import React from "react";
 
-import BasicArea from "src/view/atoms/BasicArea.js"
+import BasicArea from "src/view/atoms/BasicArea.js";
 
 import style from "./style.scss";
 

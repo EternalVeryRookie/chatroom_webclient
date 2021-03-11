@@ -4,7 +4,7 @@ import BasicTextbox from "src/view/atoms/BasicTextbox";
 import Label from "src/view/atoms/Label";
 import BasicArea from "src/view/atoms/BasicArea";
 
-import PopUp from "src/view/molecules/PopUp/PopUp.js";
+import {UserInputPopUp} from "src/view/molecules/PopUp/PopUpTemplates.js";
 import ShowCreateChatroomPopUpButton from "src/view/molecules/ShowCreateChatroomPopUpButton/ShowCreateChatroomPopUpButton.js";
 
 import style from "./style.scss";
@@ -19,18 +19,11 @@ import style from "./style.scss";
 function CreateChatroomModalContent(props) {
 
     return (
-        <BasicArea className={style.create_chatroom_modal}>
-            <BasicArea className={style.header}>
-               <Label className={style.title}>ルームを作成する</Label>
-               <Label>×</Label>
-            </BasicArea>
-            <BasicArea className={style.content}>
-                <BasicTextbox className={style.room_name_textbox} placeholder="ルーム名"/>
-                <BasicTextArea className={style.room_descriptioin_textarea} placeholder="説明"/>
-                <input type="checkbox" value="public"/>
-                <input type="file"/>
-                <input type="button" value="作成"/>
-            </BasicArea>
+        <BasicArea className={style.content}>
+            <input type="file"/>
+            <BasicTextbox className={style.room_name_textbox} placeholder="ルーム名"/>
+            <BasicTextArea className={style.room_description_textarea} placeholder="説明"/>
+            <input type="checkbox" value="public"/>
         </BasicArea>
     );
 }
@@ -39,14 +32,18 @@ function CreateChatroomModalContent(props) {
 export default function CreateChatroomModal(props) {
     const [isShow, setIsShow] = useState(false);
 
+    const onCreateBtnClick = evt => {
+        setIsShow(false);
+    }
+
     return (
         <>
         <ShowCreateChatroomPopUpButton onClick={() => setIsShow(true)}/>
         {
             isShow?
-                <PopUp>
+                <UserInputPopUp isAlign={true} headerTitle={"ルームを作成する"} commitBtnText="作成" onCloseBtnClick={evt => setIsShow(false)} onCommitBtnClick={onCreateBtnClick}>
                     <CreateChatroomModalContent/>
-                </PopUp>: 
+                </UserInputPopUp>: 
                 null
         }
         </>
